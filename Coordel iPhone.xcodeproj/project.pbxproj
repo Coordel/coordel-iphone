@@ -10,7 +10,6 @@
 		405756E017A3177D00735F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756DF17A3177D00735F69 /* UIKit.framework */; };
 		405756E217A3177D00735F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E117A3177D00735F69 /* Foundation.framework */; };
 		405756E417A3177D00735F69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E317A3177D00735F69 /* CoreGraphics.framework */; };
-		405756EA17A3177D00735F69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 405756E817A3177D00735F69 /* InfoPlist.strings */; };
 		405756EC17A3177D00735F69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 405756EB17A3177D00735F69 /* main.m */; };
 		405756F017A3177D00735F69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405756EF17A3177D00735F69 /* AppDelegate.m */; };
 		405756F217A3177D00735F69 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 405756F117A3177D00735F69 /* Default.png */; };
@@ -62,6 +61,9 @@
 		405757FB17A480DC00735F69 /* CKInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F917A480DC00735F69 /* CKInboxViewController.m */; };
 		405757FE17A480F700735F69 /* CKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757FD17A480F700735F69 /* CKSettingsViewController.m */; };
 		405757FF17A480F700735F69 /* CKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757FD17A480F700735F69 /* CKSettingsViewController.m */; };
+		4057580317A5058A00735F69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4057580117A5058A00735F69 /* InfoPlist.strings */; };
+		4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057580517A50A1D00735F69 /* LocalizedConstants.m */; };
+		4057580917A50A3A00735F69 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057580817A50A3A00735F69 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +82,6 @@
 		405756E117A3177D00735F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		405756E317A3177D00735F69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		405756E717A3177D00735F69 /* Coordel iPhone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coordel iPhone-Info.plist"; sourceTree = "<group>"; };
-		405756E917A3177D00735F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		405756EB17A3177D00735F69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		405756ED17A3177D00735F69 /* Coordel iPhone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coordel iPhone-Prefix.pch"; sourceTree = "<group>"; };
 		405756EE17A3177D00735F69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,6 +135,10 @@
 		405757F917A480DC00735F69 /* CKInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxViewController.m; sourceTree = "<group>"; };
 		405757FC17A480F700735F69 /* CKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSettingsViewController.h; sourceTree = "<group>"; };
 		405757FD17A480F700735F69 /* CKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSettingsViewController.m; sourceTree = "<group>"; };
+		4057580217A5058A00735F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		4057580517A50A1D00735F69 /* LocalizedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedConstants.m; sourceTree = "<group>"; };
+		4057580717A50A3900735F69 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4057580817A50A3A00735F69 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +226,9 @@
 				4057571B17A3184800735F69 /* Controllers */,
 				4057571C17A3185A00735F69 /* Resources */,
 				405756E617A3177D00735F69 /* Supporting Files */,
+				4057580517A50A1D00735F69 /* LocalizedConstants.m */,
+				4057580717A50A3900735F69 /* Constants.h */,
+				4057580817A50A3A00735F69 /* Constants.m */,
 			);
 			path = Coordel;
 			sourceTree = "<group>";
@@ -228,8 +236,8 @@
 		405756E617A3177D00735F69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4057580017A5058A00735F69 /* en.lproj */,
 				405756E717A3177D00735F69 /* Coordel iPhone-Info.plist */,
-				405756E817A3177D00735F69 /* InfoPlist.strings */,
 				405756EB17A3177D00735F69 /* main.m */,
 				405756ED17A3177D00735F69 /* Coordel iPhone-Prefix.pch */,
 			);
@@ -372,6 +380,14 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		4057580017A5058A00735F69 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4057580117A5058A00735F69 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,7 +459,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405756EA17A3177D00735F69 /* InfoPlist.strings in Resources */,
 				405756F217A3177D00735F69 /* Default.png in Resources */,
 				405756F417A3177D00735F69 /* Default@2x.png in Resources */,
 				405756F617A3177D00735F69 /* Default-568h@2x.png in Resources */,
@@ -463,6 +478,7 @@
 				405757D117A478BA00735F69 /* tasks-icon-blue@2x.png in Resources */,
 				405757D217A478BA00735F69 /* tasks-icon.png in Resources */,
 				405757D317A478BA00735F69 /* tasks-icon@2x.png in Resources */,
+				4057580317A5058A00735F69 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +522,8 @@
 				405757F617A480C300735F69 /* CKTasksViewController.m in Sources */,
 				405757FA17A480DC00735F69 /* CKInboxViewController.m in Sources */,
 				405757FE17A480F700735F69 /* CKSettingsViewController.m in Sources */,
+				4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */,
+				4057580917A50A3A00735F69 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,18 +553,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		405756E817A3177D00735F69 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				405756E917A3177D00735F69 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		4057570C17A3177D00735F69 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4057570D17A3177D00735F69 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4057580117A5058A00735F69 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4057580217A5058A00735F69 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

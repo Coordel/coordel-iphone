@@ -90,26 +90,26 @@
 	}
 	else if (row == 1)
 	{
-		cell.textLabel.text = @"Lists";
+		cell.textLabel.text = kLocalizedLists;
         cell.imageView.image = [UIImage imageNamed:@"lists-icon-green.png"];
         
 	}
 	else if (row == 2)
 	{
-		cell.textLabel.text = @"Tasks";
+		cell.textLabel.text = kLocalizedTasks;
         cell.imageView.image = [UIImage imageNamed:@"tasks-icon-blue.png"];
         
         
 	}
 	else if (row == 3)
 	{
-		cell.textLabel.text = @"Inbox";
+		cell.textLabel.text = kLocalizedInbox;
         cell.imageView.image = [UIImage imageNamed:@"inbox-icon-red.png"];
         
 	}
     else if (row == 4)
 	{
-		cell.textLabel.text = @"Settings";
+		cell.textLabel.text = kLocalizedSettings;
         cell.imageView.image = [UIImage imageNamed:@"settings-icon-black.png"];
 	}
 	return cell;
