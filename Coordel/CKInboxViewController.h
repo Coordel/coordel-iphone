@@ -8,6 +8,8 @@
 
 #import "CKBaseSegmentedViewController.h"
 
-@interface CKInboxViewController : CKBaseSegmentedViewController
+@interface CKInboxViewController : UIViewController
+
+@property int segmentIndex;
 
 @end

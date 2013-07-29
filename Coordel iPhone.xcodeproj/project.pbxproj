@@ -64,6 +64,9 @@
 		4057580317A5058A00735F69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4057580117A5058A00735F69 /* InfoPlist.strings */; };
 		4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057580517A50A1D00735F69 /* LocalizedConstants.m */; };
 		4057580917A50A3A00735F69 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057580817A50A3A00735F69 /* Constants.m */; };
+		4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057580F17A6DD9100735F69 /* CKInboxViewController.xib */; };
+		4057581217A6E9E300735F69 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581117A6E9E300735F69 /* play.png */; };
+		4057581417A6EA3300735F69 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581317A6EA3300735F69 /* play@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +142,9 @@
 		4057580517A50A1D00735F69 /* LocalizedConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedConstants.m; sourceTree = "<group>"; };
 		4057580717A50A3900735F69 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4057580817A50A3A00735F69 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		4057580F17A6DD9100735F69 /* CKInboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxViewController.xib; sourceTree = "<group>"; };
+		4057581117A6E9E300735F69 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		4057581317A6EA3300735F69 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +330,8 @@
 		405757B317A477FE00735F69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4057581117A6E9E300735F69 /* play.png */,
+				4057581317A6EA3300735F69 /* play@2x.png */,
 				405757B417A478BA00735F69 /* inbox-icon-red.png */,
 				405757B517A478BA00735F69 /* inbox-icon-red@2x.png */,
 				405757B617A478BA00735F69 /* inbox-icon.png */,
@@ -367,6 +375,7 @@
 			children = (
 				405757F817A480DC00735F69 /* CKInboxViewController.h */,
 				405757F917A480DC00735F69 /* CKInboxViewController.m */,
+				4057580F17A6DD9100735F69 /* CKInboxViewController.xib */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -479,6 +488,9 @@
 				405757D217A478BA00735F69 /* tasks-icon.png in Resources */,
 				405757D317A478BA00735F69 /* tasks-icon@2x.png in Resources */,
 				4057580317A5058A00735F69 /* InfoPlist.strings in Resources */,
+				4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */,
+				4057581217A6E9E300735F69 /* play.png in Resources */,
+				4057581417A6EA3300735F69 /* play@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
