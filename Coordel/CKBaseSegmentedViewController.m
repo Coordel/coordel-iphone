@@ -111,14 +111,18 @@
         CKListsViewController *listsController = [[CKListsViewController alloc] init];
         listsController.segmentIndex=0;
         [self.navigationController pushViewController:listsController animated:NO];
+        
+        
     } else if (index == 1){
         CKTasksViewController *tasksController = [[CKTasksViewController alloc] init];
         tasksController.segmentIndex=1;
         [self.navigationController pushViewController:tasksController animated:NO];
+       
     } else if (index == 2){
         CKInboxViewController *inboxController = [[CKInboxViewController alloc] init];
         inboxController.segmentIndex=2;
         [self.navigationController pushViewController:inboxController animated:NO];
+        
     }
     
 	//NSLog(@"Segment clicked: %d", segmentedControl.selectedSegmentIndex);

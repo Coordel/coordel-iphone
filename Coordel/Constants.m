@@ -6,8 +6,4 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
-#import "Constants.h"
 
-@implementation Constants
-
-@end

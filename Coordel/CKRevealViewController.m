@@ -38,6 +38,8 @@
     [[self navigationController] setNavigationBarHidden:YES];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -99,12 +101,13 @@
 		cell.textLabel.text = kLocalizedTasks;
         cell.imageView.image = [UIImage imageNamed:@"tasks-icon-blue.png"];
         
-        
+       
 	}
 	else if (row == 3)
 	{
 		cell.textLabel.text = kLocalizedInbox;
         cell.imageView.image = [UIImage imageNamed:@"inbox-icon-red.png"];
+       
         
 	}
     else if (row == 4)
@@ -139,6 +142,7 @@
             
             
 			UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listsViewController];
+        
             
 			[revealController setFrontViewController:navigationController animated:YES];
         }
@@ -160,6 +164,9 @@
             tasksViewController.segmentIndex = 1;
 
 			UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tasksViewController];
+            
+            
+            
             
 			[revealController setFrontViewController:navigationController animated:YES];
 		}

@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import <Parse/Parse.h>
     #import "LocalizedConstants.m"
+    #import "Constants.h"
 #endif

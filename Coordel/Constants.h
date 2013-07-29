@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#pragma mark - Coordel Colors
 
-@interface Constants : NSObject
+#define kCKColorLists [UIColor colorWithRed:122/255.0f green:207/255.0f blue:21/255.0f alpha:1]
+#define kCKColorTasks [UIColor colorWithRed:63/255.0f green:169/255.0f blue:245/255.0f alpha:1]
+#define kCKColorInbox [UIColor colorWithRed:255/255.0f green:29/255.0f blue:37/255.0f alpha:1]
 
-@end
