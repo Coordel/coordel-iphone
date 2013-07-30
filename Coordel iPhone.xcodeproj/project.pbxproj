@@ -67,6 +67,8 @@
 		4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057580F17A6DD9100735F69 /* CKInboxViewController.xib */; };
 		4057581217A6E9E300735F69 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581117A6E9E300735F69 /* play.png */; };
 		4057581417A6EA3300735F69 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581317A6EA3300735F69 /* play@2x.png */; };
+		4057581917A722BF00735F69 /* inbox-level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581817A722BF00735F69 /* inbox-level-1.png */; };
+		4057581B17A73A0900735F69 /* inbox-level-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581A17A73A0900735F69 /* inbox-level-1@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,8 @@
 		4057580F17A6DD9100735F69 /* CKInboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxViewController.xib; sourceTree = "<group>"; };
 		4057581117A6E9E300735F69 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		4057581317A6EA3300735F69 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		4057581817A722BF00735F69 /* inbox-level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-level-1.png"; sourceTree = "<group>"; };
+		4057581A17A73A0900735F69 /* inbox-level-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-level-1@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +334,8 @@
 		405757B317A477FE00735F69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4057581817A722BF00735F69 /* inbox-level-1.png */,
+				4057581A17A73A0900735F69 /* inbox-level-1@2x.png */,
 				4057581117A6E9E300735F69 /* play.png */,
 				4057581317A6EA3300735F69 /* play@2x.png */,
 				405757B417A478BA00735F69 /* inbox-icon-red.png */,
@@ -491,6 +497,8 @@
 				4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */,
 				4057581217A6E9E300735F69 /* play.png in Resources */,
 				4057581417A6EA3300735F69 /* play@2x.png in Resources */,
+				4057581917A722BF00735F69 /* inbox-level-1.png in Resources */,
+				4057581B17A73A0900735F69 /* inbox-level-1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
