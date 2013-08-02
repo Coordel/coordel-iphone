@@ -8,15 +8,32 @@
 
 #import "AppDelegate.h"
 
-#import "SWRevealViewController.h"
+//welcome,login,signup
+#import "CKAccessViewController.h"
+#import "CKLoginViewController.h"
+#import "CKSignupViewController.h"
+#import "CKWelcomeViewController.h"
 
+//application
+#import "SWRevealViewController.h"
 #import "CKRevealViewController.h"
 #import "CKListsViewController.h"
 #import "CKTasksViewController.h"
 #import "CKInboxViewController.h"
 #import "CKSettingsViewController.h"
 
-@interface AppDelegate()<SWRevealViewControllerDelegate>
+@interface AppDelegate() <SWRevealViewControllerDelegate>
+
+@property (nonatomic, strong) CKAccessViewController *accessViewController;
+@property (nonatomic, strong) CKWelcomeViewController *welcomeViewController;
+@property (nonatomic, strong) CKLoginViewController *loginViewController;
+@property (nonatomic, strong) CKSignupViewController *signupViewController;
+
+@property (nonatomic, strong) CKListsViewController *listsViewController;
+@property (nonatomic, strong) CKTasksViewController *tasksViewController;
+@property (nonatomic, strong) CKInboxViewController *inboxViewController;
+@property (nonatomic, strong) CKSettingsViewController *settingsViewController;
+
 @end
 
 @implementation AppDelegate
@@ -35,25 +52,87 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+   
+    self.accessViewController = [[CKAccessViewController alloc] init];
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.accessViewController];
+    
+    self.navController.navigationBarHidden = YES;
+    
+    self.window.rootViewController = self.navController;
+    
+    [self.window makeKeyAndVisible];
+
+	return YES;
+
+}
+
+- (void)presentWelcomeViewController
+{
+    self.welcomeViewController = [[CKWelcomeViewController alloc]init];
+    [self.navController pushViewController:self.welcomeViewController animated:YES];
+}
+
+
+- (void)presentLoginViewControllerAnimated:(BOOL)animated {
+    
+    //create the controller
+    self.loginViewController = [[CKLoginViewController alloc] init];
+    self.signupViewController  = [[CKSignupViewController alloc]init];
+    [self.loginViewController setSignUpController:self.signupViewController];
+    self.loginViewController.delegate = self;
+    self.loginViewController.modalTransitionStyle = UIModalPresentationFullScreen;
+    [self.window.rootViewController presentViewController:self.loginViewController animated:YES completion: nil];
+}
+
+- (void)presentLoginViewController {
+    [self presentLoginViewControllerAnimated:YES];
+}
+
+- (void)presentSignupViewControllerAnimated:(BOOL)animated {
+    
+    //create the controller
+    self.signupViewController = [[CKSignupViewController alloc] init];
+    self.signupViewController.delegate = self;
+    self.signupViewController.modalTransitionStyle = UIModalPresentationFullScreen;
+    [self.window.rootViewController presentViewController:self.signupViewController animated:YES completion: nil];
+}
+
+    
+
+- (void)presentSignupViewController
+{
+
+   [self presentSignupViewControllerAnimated:YES];
+}
+
+
+-(void)presentAppViewController
+{
+    
     CKTasksViewController *frontViewController = [[CKTasksViewController alloc] init];
     frontViewController.segmentIndex=1;
+    
 	CKRevealViewController *rearViewController = [[CKRevealViewController alloc] init];
 	
 	UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    
     UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
 	
 	SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
     
     revealController.delegate = self;
     
-    self.viewController = revealController;
-	
-	self.window.rootViewController = self.viewController;
-    
-	[self.window makeKeyAndVisible];
-	return YES;
+    self.window.rootViewController = revealController;
 
 }
+
+- (void)logout
+{
+  
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

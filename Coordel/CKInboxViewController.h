@@ -12,4 +12,12 @@
 
 @property int segmentIndex;
 
+
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inboxCount;
+
+- (IBAction)valueChanged:(id)sender;
+
+
 @end

@@ -7,3 +7,6 @@
 //
 
 
+#pragma mark - User Default Keys
+// Class key
+NSString *const kCKUserDefaultsAfterFirstLaunch = @"afterFirstLaunch";

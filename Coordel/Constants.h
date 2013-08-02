@@ -12,3 +12,7 @@
 #define kCKColorTasks [UIColor colorWithRed:63/255.0f green:169/255.0f blue:245/255.0f alpha:1]
 #define kCKColorInbox [UIColor colorWithRed:255/255.0f green:29/255.0f blue:37/255.0f alpha:1]
 
+
+#pragma mark - User Defaults Keys
+// Class key
+extern NSString *const kCKUserDefaultsAfterFirstLaunch;

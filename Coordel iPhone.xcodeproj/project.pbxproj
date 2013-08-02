@@ -69,6 +69,23 @@
 		4057581417A6EA3300735F69 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581317A6EA3300735F69 /* play@2x.png */; };
 		4057581917A722BF00735F69 /* inbox-level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581817A722BF00735F69 /* inbox-level-1.png */; };
 		4057581B17A73A0900735F69 /* inbox-level-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581A17A73A0900735F69 /* inbox-level-1@2x.png */; };
+		4057585517A7C61000735F69 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057584C17A7C5BB00735F69 /* libMailCore-ios.a */; };
+		4057585817A7FB4900735F69 /* graph-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057585617A7FB4900735F69 /* graph-placeholder@2x.png */; };
+		4057585917A7FB4900735F69 /* graph-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057585717A7FB4900735F69 /* graph-placeholder.png */; };
+		4057586117A98E1500735F69 /* CKEmailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057586017A98E1500735F69 /* CKEmailAccount.m */; };
+		4057586217A98E1500735F69 /* CKEmailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057586017A98E1500735F69 /* CKEmailAccount.m */; };
+		4057587117A9BFC700735F69 /* CKWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057586F17A9BFC700735F69 /* CKWelcomeViewController.m */; };
+		4057587217A9BFC700735F69 /* CKWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057587017A9BFC700735F69 /* CKWelcomeViewController.xib */; };
+		4057588417A9DD8D00735F69 /* CKWelcomeChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057588217A9DD8C00735F69 /* CKWelcomeChildViewController.m */; };
+		4057588517A9DD8E00735F69 /* CKWelcomeChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057588317A9DD8D00735F69 /* CKWelcomeChildViewController.xib */; };
+		4057588817AA6D4600735F69 /* coordel-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057588617AA6D4600735F69 /* coordel-logo@2x.png */; };
+		4057589117AA723B00735F69 /* CKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057589017AA723B00735F69 /* CKLoginViewController.m */; };
+		4057589417AA735E00735F69 /* CKAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057589317AA735C00735F69 /* CKAccessViewController.m */; };
+		4057589B17AAB4A900735F69 /* CKSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057589A17AAB4A700735F69 /* CKSignupViewController.m */; };
+		4057589F17AABA3B00735F69 /* coordel-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057589E17AABA3B00735F69 /* coordel-logo.png */; };
+		405758A117AABE7100735F69 /* fields-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758A017AABE7100735F69 /* fields-login.png */; };
+		405758AC17ABB7DA00735F69 /* button-signup-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758AA17ABB7DA00735F69 /* button-signup-down.png */; };
+		405758AD17ABB7DA00735F69 /* button-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758AB17ABB7DA00735F69 /* button-signup.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +95,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = 405756DB17A3177D00735F69;
 			remoteInfo = Coordel;
+		};
+		4057584917A7C5BB00735F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA537169E772200778456;
+			remoteInfo = "static mailcore2 osx";
+		};
+		4057584B17A7C5BB00735F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
+		4057584D17A7C5BB00735F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA78C169F259200778456;
+			remoteInfo = tests;
+		};
+		4057584F17A7C5BB00735F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6A81B911706840C00882C15;
+			remoteInfo = "test-ios";
+		};
+		4057585117A7C5BB00735F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
+			remoteInfo = "mailcore osx";
+		};
+		4057585317A7C5CA00735F69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -149,6 +208,28 @@
 		4057581317A6EA3300735F69 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
 		4057581817A722BF00735F69 /* inbox-level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-level-1.png"; sourceTree = "<group>"; };
 		4057581A17A73A0900735F69 /* inbox-level-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-level-1@2x.png"; sourceTree = "<group>"; };
+		4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		4057585617A7FB4900735F69 /* graph-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph-placeholder@2x.png"; sourceTree = "<group>"; };
+		4057585717A7FB4900735F69 /* graph-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph-placeholder.png"; sourceTree = "<group>"; };
+		4057585F17A98E1500735F69 /* CKEmailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEmailAccount.h; sourceTree = "<group>"; };
+		4057586017A98E1500735F69 /* CKEmailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKEmailAccount.m; sourceTree = "<group>"; };
+		4057586E17A9BFC700735F69 /* CKWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKWelcomeViewController.h; sourceTree = "<group>"; };
+		4057586F17A9BFC700735F69 /* CKWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKWelcomeViewController.m; sourceTree = "<group>"; };
+		4057587017A9BFC700735F69 /* CKWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKWelcomeViewController.xib; sourceTree = "<group>"; };
+		4057588117A9DD8C00735F69 /* CKWelcomeChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKWelcomeChildViewController.h; sourceTree = "<group>"; };
+		4057588217A9DD8C00735F69 /* CKWelcomeChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKWelcomeChildViewController.m; sourceTree = "<group>"; };
+		4057588317A9DD8D00735F69 /* CKWelcomeChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKWelcomeChildViewController.xib; sourceTree = "<group>"; };
+		4057588617AA6D4600735F69 /* coordel-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coordel-logo@2x.png"; sourceTree = "<group>"; };
+		4057588F17AA723B00735F69 /* CKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKLoginViewController.h; sourceTree = "<group>"; };
+		4057589017AA723B00735F69 /* CKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKLoginViewController.m; sourceTree = "<group>"; };
+		4057589217AA735C00735F69 /* CKAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAccessViewController.h; sourceTree = "<group>"; };
+		4057589317AA735C00735F69 /* CKAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAccessViewController.m; sourceTree = "<group>"; };
+		4057589917AAB4A500735F69 /* CKSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSignupViewController.h; sourceTree = "<group>"; };
+		4057589A17AAB4A700735F69 /* CKSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSignupViewController.m; sourceTree = "<group>"; };
+		4057589E17AABA3B00735F69 /* coordel-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coordel-logo.png"; sourceTree = "<group>"; };
+		405758A017AABE7100735F69 /* fields-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fields-login.png"; sourceTree = "<group>"; };
+		405758AA17ABB7DA00735F69 /* button-signup-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-signup-down.png"; sourceTree = "<group>"; };
+		405758AB17ABB7DA00735F69 /* button-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-signup.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4057585517A7C61000735F69 /* libMailCore-ios.a in Frameworks */,
 				4057573817A3EBAF00735F69 /* SystemConfiguration.framework in Frameworks */,
 				4057573617A3EB9B00735F69 /* StoreKit.framework in Frameworks */,
 				4057573417A3EB9300735F69 /* Security.framework in Frameworks */,
@@ -230,8 +312,10 @@
 		405756E517A3177D00735F69 /* Coordel */ = {
 			isa = PBXGroup;
 			children = (
+				4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */,
 				405756EE17A3177D00735F69 /* AppDelegate.h */,
 				405756EF17A3177D00735F69 /* AppDelegate.m */,
+				4057585A17A98C4C00735F69 /* Models */,
 				4057571A17A3183F00735F69 /* Views */,
 				4057571B17A3184800735F69 /* Controllers */,
 				4057571C17A3185A00735F69 /* Resources */,
@@ -283,6 +367,7 @@
 		4057571B17A3184800735F69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4057586817A9B83600735F69 /* Access */,
 				4057573917A3F0CE00735F69 /* Reveal */,
 				405757D417A47A0000735F69 /* Lists */,
 				405757D517A47A0C00735F69 /* Tasks */,
@@ -334,6 +419,13 @@
 		405757B317A477FE00735F69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				405758AA17ABB7DA00735F69 /* button-signup-down.png */,
+				405758AB17ABB7DA00735F69 /* button-signup.png */,
+				405758A017AABE7100735F69 /* fields-login.png */,
+				4057589E17AABA3B00735F69 /* coordel-logo.png */,
+				4057588617AA6D4600735F69 /* coordel-logo@2x.png */,
+				4057585617A7FB4900735F69 /* graph-placeholder@2x.png */,
+				4057585717A7FB4900735F69 /* graph-placeholder.png */,
 				4057581817A722BF00735F69 /* inbox-level-1.png */,
 				4057581A17A73A0900735F69 /* inbox-level-1@2x.png */,
 				4057581117A6E9E300735F69 /* play.png */,
@@ -403,6 +495,54 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
+		4057584217A7C5BA00735F69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4057584A17A7C5BB00735F69 /* libMailCore.a */,
+				4057584C17A7C5BB00735F69 /* libMailCore-ios.a */,
+				4057584E17A7C5BB00735F69 /* tests */,
+				4057585017A7C5BB00735F69 /* test-ios.app */,
+				4057585217A7C5BB00735F69 /* MailCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4057585A17A98C4C00735F69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4057586317A9995500735F69 /* Inbox */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4057586317A9995500735F69 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				4057585F17A98E1500735F69 /* CKEmailAccount.h */,
+				4057586017A98E1500735F69 /* CKEmailAccount.m */,
+			);
+			name = Inbox;
+			sourceTree = "<group>";
+		};
+		4057586817A9B83600735F69 /* Access */ = {
+			isa = PBXGroup;
+			children = (
+				4057589217AA735C00735F69 /* CKAccessViewController.h */,
+				4057589317AA735C00735F69 /* CKAccessViewController.m */,
+				4057586E17A9BFC700735F69 /* CKWelcomeViewController.h */,
+				4057586F17A9BFC700735F69 /* CKWelcomeViewController.m */,
+				4057587017A9BFC700735F69 /* CKWelcomeViewController.xib */,
+				4057588117A9DD8C00735F69 /* CKWelcomeChildViewController.h */,
+				4057588217A9DD8C00735F69 /* CKWelcomeChildViewController.m */,
+				4057588317A9DD8D00735F69 /* CKWelcomeChildViewController.xib */,
+				4057588F17AA723B00735F69 /* CKLoginViewController.h */,
+				4057589017AA723B00735F69 /* CKLoginViewController.m */,
+				4057589917AAB4A500735F69 /* CKSignupViewController.h */,
+				4057589A17AAB4A700735F69 /* CKSignupViewController.m */,
+			);
+			name = Access;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,6 +557,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4057585417A7C5CA00735F69 /* PBXTargetDependency */,
 			);
 			name = "Coordel iPhone";
 			productName = Coordel;
@@ -461,6 +602,12 @@
 			mainGroup = 405756D317A3177D00735F69;
 			productRefGroup = 405756DD17A3177D00735F69 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4057584217A7C5BA00735F69 /* Products */;
+					ProjectRef = 4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				405756DB17A3177D00735F69 /* Coordel iPhone */,
@@ -468,6 +615,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4057584A17A7C5BB00735F69 /* libMailCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMailCore.a;
+			remoteRef = 4057584917A7C5BB00735F69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4057584C17A7C5BB00735F69 /* libMailCore-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMailCore-ios.a";
+			remoteRef = 4057584B17A7C5BB00735F69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4057584E17A7C5BB00735F69 /* tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = tests;
+			remoteRef = 4057584D17A7C5BB00735F69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4057585017A7C5BB00735F69 /* test-ios.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "test-ios.app";
+			remoteRef = 4057584F17A7C5BB00735F69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4057585217A7C5BB00735F69 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = 4057585117A7C5BB00735F69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		405756DA17A3177D00735F69 /* Resources */ = {
@@ -499,6 +684,15 @@
 				4057581417A6EA3300735F69 /* play@2x.png in Resources */,
 				4057581917A722BF00735F69 /* inbox-level-1.png in Resources */,
 				4057581B17A73A0900735F69 /* inbox-level-1@2x.png in Resources */,
+				4057585817A7FB4900735F69 /* graph-placeholder@2x.png in Resources */,
+				4057585917A7FB4900735F69 /* graph-placeholder.png in Resources */,
+				4057587217A9BFC700735F69 /* CKWelcomeViewController.xib in Resources */,
+				4057588517A9DD8E00735F69 /* CKWelcomeChildViewController.xib in Resources */,
+				4057588817AA6D4600735F69 /* coordel-logo@2x.png in Resources */,
+				4057589F17AABA3B00735F69 /* coordel-logo.png in Resources */,
+				405758A117AABE7100735F69 /* fields-login.png in Resources */,
+				405758AC17ABB7DA00735F69 /* button-signup-down.png in Resources */,
+				405758AD17ABB7DA00735F69 /* button-signup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +738,12 @@
 				405757FE17A480F700735F69 /* CKSettingsViewController.m in Sources */,
 				4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */,
 				4057580917A50A3A00735F69 /* Constants.m in Sources */,
+				4057586117A98E1500735F69 /* CKEmailAccount.m in Sources */,
+				4057587117A9BFC700735F69 /* CKWelcomeViewController.m in Sources */,
+				4057588417A9DD8D00735F69 /* CKWelcomeChildViewController.m in Sources */,
+				4057589117AA723B00735F69 /* CKLoginViewController.m in Sources */,
+				4057589417AA735E00735F69 /* CKAccessViewController.m in Sources */,
+				4057589B17AAB4A900735F69 /* CKSignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +759,7 @@
 				405757F717A480C300735F69 /* CKTasksViewController.m in Sources */,
 				405757FB17A480DC00735F69 /* CKInboxViewController.m in Sources */,
 				405757FF17A480F700735F69 /* CKSettingsViewController.m in Sources */,
+				4057586217A98E1500735F69 /* CKEmailAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +770,11 @@
 			isa = PBXTargetDependency;
 			target = 405756DB17A3177D00735F69 /* Coordel iPhone */;
 			targetProxy = 4057570717A3177D00735F69 /* PBXContainerItemProxy */;
+		};
+		4057585417A7C5CA00735F69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "static mailcore2 ios";
+			targetProxy = 4057585317A7C5CA00735F69 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -651,6 +857,7 @@
 		4057571517A3177D00735F69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -658,6 +865,22 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coordel/Coordel iPhone-Prefix.pch";
 				INFOPLIST_FILE = "Coordel/Coordel iPhone-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-licudata",
+					"-licui18n",
+					"-licuuc",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lstdc++",
+					"-stdlib=libstdc++",
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libMailCore-ios.a",
+				);
 				PRODUCT_NAME = "Coordel iPhone";
 				WRAPPER_EXTENSION = app;
 			};
@@ -666,6 +889,7 @@
 		4057571617A3177D00735F69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -673,6 +897,22 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coordel/Coordel iPhone-Prefix.pch";
 				INFOPLIST_FILE = "Coordel/Coordel iPhone-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-licudata",
+					"-licui18n",
+					"-licuuc",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lstdc++",
+					"-stdlib=libstdc++",
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libMailCore-ios.a",
+				);
 				PRODUCT_NAME = "Coordel iPhone";
 				WRAPPER_EXTENSION = app;
 			};
