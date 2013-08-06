@@ -28,6 +28,7 @@
     
     BOOL afterFirst;
     afterFirst = NO;
+    //default to the tasks view;
     [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentAppViewController];
     
     /*

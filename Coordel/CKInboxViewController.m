@@ -6,28 +6,31 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
+#import "AppDelegate.h"
+
 #import "SWRevealViewController.h"
 #import "CKInboxViewController.h"
 #import "CKListsViewController.h"
 #import "CKTasksViewController.h"
 #import "MailCore/MailCore.h"
+#import "CKInbox.h"
 
 
 @interface CKInboxViewController ()
+
 @property NSArray *fetchedHeaders;
 @property NSDate *earliestMessageReceivedDate;
 @property NSDate *sliderDate;
+@property CKInbox *inbox;
+
+@property AppDelegate *app;
     
 @end
 
+
+
 @implementation CKInboxViewController
 
-@synthesize slider;
-@synthesize sliderLabel;
-@synthesize inboxCount;
-@synthesize fetchedHeaders;
-@synthesize earliestMessageReceivedDate;
-@synthesize sliderDate;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,13 +45,40 @@
 
 - (void)viewDidLoad
 {
-    [self loadInboxHeaders];
+   
 
     
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     
-    [self showPrimaryNavBar:self.segmentIndex];
+    _app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    _inbox = [_app inbox];
+    
+    _earliestMessageReceivedDate = [_inbox fetchEarliestMessageReceivedDate];
+    
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDate *savedDate = [_inbox fetchInboxSliderDate];
+    
+    
+    //set up the slider
+    _slider.continuous = YES; // Make the slider 'stick' as it is moved.
+    [_slider setMinimumValue:0];
+    [_slider setMaximumValue:100];
+    NSLog(@"slider is:%@",_slider);
+    
+    
+    if (savedDate){
+        int sliderInterval = [self getSliderInterval];
+        //diff saved date and earliest/interval gives index
+        NSTimeInterval interval = [savedDate timeIntervalSinceDate:_earliestMessageReceivedDate];
+        int sliderIndex = interval/sliderInterval;
+        _slider.value = sliderIndex;
+        [self setInboxCountLabel];
+    } else {
+        [self setInboxCountLabel];
+    }
     
     SWRevealViewController *revealController = [self revealViewController];
     
@@ -58,15 +88,12 @@
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     
     self.navigationItem.leftBarButtonItem = revealButtonItem;
-    
+
     
     self.navigationController.navigationBar.tintColor = kCKColorInbox;
+    self.segmentIndex = 2;
+    [self showPrimaryNavBar];
     
-
-    //set up the slider
-    slider.continuous = YES; // Make the slider 'stick' as it is moved.
-    [slider setMinimumValue:0];
-    [slider setMaximumValue:100];
 
     
 }
@@ -78,23 +105,59 @@
 - (int)getSliderInterval
 {
     NSDate *currentDate = [NSDate date];
-    NSLog(@"received date %@", self.earliestMessageReceivedDate);
-    NSTimeInterval sliderInterval = [currentDate timeIntervalSinceDate:self.earliestMessageReceivedDate]/100;
-    
-    
+    //NSLog(@"received date %@", _earliestMessageReceivedDate);
+    NSTimeInterval sliderInterval = [currentDate timeIntervalSinceDate:_earliestMessageReceivedDate]/100;
 
     return sliderInterval;
 }
 
+- (void)setSliderIndex:(NSDate *)byDate
+{
+    //we know the time interval
+    //we know there are 100 slots
+    
+    //diff saved date and earliest/interval gives index
+    NSTimeInterval sliderIndex = [byDate timeIntervalSinceDate:_earliestMessageReceivedDate]/[self getSliderInterval];
+    _slider.value = sliderIndex;
+}
+
 - (NSString *)getSliderLabel:(NSDate *)fromSliderDate
 {
+    
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM dd, YYYY, hh:mm a"];
+    [formatter setDoesRelativeDateFormatting:YES];
+    [formatter setDateStyle: NSDateFormatterLongStyle];
+    [formatter setTimeStyle: NSDateFormatterShortStyle];
+    
+ 
+    NSString *formattedDateTime = [formatter stringFromDate:fromSliderDate];
     
     
-    NSString *stringFromDate = [formatter stringFromDate:fromSliderDate];
     
-    return stringFromDate;
+    
+    return formattedDateTime;
+}
+
+
+- (NSDate *)dateAtBeginningOfDayForDate:(NSDate *)inputDate
+{
+    // Use the user's current calendar and time zone
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    [calendar setTimeZone:timeZone];
+    
+    // Selectively convert the date components (year, month, day) of the input date
+    NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:inputDate];
+    
+    // Set the time components manually
+    [dateComps setHour:0];
+    [dateComps setMinute:0];
+    [dateComps setSecond:0];
+    
+    // Convert back
+    NSDate *beginningOfDay = [calendar dateFromComponents:dateComps];
+    return beginningOfDay;
 }
  
 
@@ -106,147 +169,47 @@
 
 - (int)getInboxCount:(int)sliderIndex
 {
-    
-    //NSDate *currentDate = [NSDate date];
-    
+
+    NSDate *currentDate = [NSDate date];
+    //NSArray *headers = [_inbox fetchHeadersFromStartDate:date];
     //get all, no need to calculate if 0
+    
+    NSDate *startDate = currentDate;
+    
     if (sliderIndex == 0){
-        sliderLabel.text = [self getSliderLabel:earliestMessageReceivedDate];
-        return fetchedHeaders.count;
+        startDate = _earliestMessageReceivedDate;
     } else {
         
-        NSDate *startDate = [[NSDate alloc] initWithTimeInterval:(sliderIndex * [self getSliderInterval]) sinceDate:earliestMessageReceivedDate];
+        startDate = [[NSDate alloc] initWithTimeInterval:(sliderIndex * [self getSliderInterval]) sinceDate:_earliestMessageReceivedDate];
         
-        sliderDate = startDate;
+        _sliderDate = startDate;
         
-        sliderLabel.text = [self getSliderLabel:startDate];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:startDate forKey:@"inboxSliderDate"];
+        [defaults synchronize];
+
         
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(header.receivedDate >= %@)", startDate];
-        
-        NSArray *filteredArray = [fetchedHeaders filteredArrayUsingPredicate:predicate];
-        
-        return filteredArray.count;
     }
-   
+    
+    NSArray *headers = [_inbox fetchHeadersFromStartDate:startDate];
+    
+    _sliderLabel.text = [self getSliderLabel:startDate];
+    
+    
+    return headers.count;
+
 }
 
 - (void)setInboxCountLabel
 {
-    NSUInteger index = (NSUInteger)(slider.value);
-    [slider setValue:index animated:YES];
-    NSLog(@"index: %i", index);
-    inboxCount.text = [NSString stringWithFormat:@"%d",[self getInboxCount:index]];
+        
+    NSUInteger index = (NSUInteger)(_slider.value);
+    [_slider setValue:index animated:YES];
+    //NSLog(@"index: %i", index);
+    _inboxCount.text = [NSString stringWithFormat:@"%d",[self getInboxCount:index]];
 }
 
-
-
-- (void)loadInboxHeaders
-{
-    MCOIMAPSession *session = [[MCOIMAPSession alloc] init];
-    
-    /*
-     [session setHostname:@"imap.mail.yahoo.com"];
-     [session setPort:993];
-     [session setUsername:@"coordel.demo1@yahoo.com"];
-     [session setPassword:@"Coordel1129"];
-     [session setConnectionType:MCOConnectionTypeTLS];
-     */
-    
-   
-    
-    [session setHostname:@"imap.gmail.com"];
-    [session setPort: 993];
-    [session setUsername:@"jeffgorder@gmail.com"];
-    [session setPassword:@"Secure1129"];
-    [session setConnectionType:MCOConnectionTypeTLS];
-    
-    
-    NSString *folder = @"INBOX";
-    
-    MCOIMAPFetchFoldersOperation * allFolders = [session fetchAllFoldersOperation];
-    [allFolders start:^(NSError * error, NSArray *folders) {
-        for (MCOIMAPFolder *f in folders){
-            NSLog(@"folder flags %@ %u",f.path, f.flags);
-        };
-    }];
-
-    
-    
-    MCOIMAPFolderInfoOperation *info = [session folderInfoOperation:folder];
-    
-    [info start:^(NSError *error, MCOIMAPFolderInfo *info){
-        NSLog(@"message count %d", info.messageCount);
-        
-        
-        inboxCount.text = [NSString stringWithFormat:@"%d",info.messageCount];
-    }];
-    
-    MCOIMAPCapabilityOperation *cap = [session capabilityOperation];
-    
-    [cap start:^(NSError *error, MCOIndexSet *capabilities) {
-        NSLog(@"capabilities %@", capabilities);
-    }];
-    
-    MCOIMAPFolderStatusOperation * op = [session folderStatusOperation:@"INBOX"];
-    [op start:^(NSError *error, MCOIMAPFolderStatus * status) {
-        NSLog(@"UIDNEXT: %lu", (unsigned long) [status uidNext]);
-        NSLog(@"UIDVALIDITY: %lu", (unsigned long) [status uidValidity]);
-        NSLog(@"folder status message count: %d", [status messageCount]);
-        
-        
-    }];
-    
-    
-       
-    //MCOIMAPMessagesRequestKind requestKind = MCOIMAPMessagesRequestKindHeaders;
-    
-    
-    
-    MCOIMAPMessagesRequestKind requestKind = (MCOIMAPMessagesRequestKind)
-    (MCOIMAPMessagesRequestKindHeaders);
-    
-    
-   
-    MCOIndexSet *uids = [MCOIndexSet indexSetWithRange:MCORangeMake(1, UINT64_MAX)];
-    
-    /*
-     MCOIMAPFetchFoldersOperation *fetchFolderOperation = [session fetchAllFoldersOperation];
-     [fetchFolderOperation start:^(NSError *error, NSArray *folders) {
-     
-     for (MCOIMAPFolder *item in folders){
-     NSLog(@"Path %@, Delimeter %hhd, Flags %u", item.path, item.delimiter, item.flags);
-     }
-     
-     }];
-     */
-    
-    
-    MCOIMAPFetchMessagesOperation *fetchOperation = [session fetchMessagesByUIDOperationWithFolder:folder requestKind:requestKind uids:uids];
-    
-    [fetchOperation start:^(NSError * error, NSArray * fetchedMessages, MCOIndexSet * vanishedMessages) {
-        //We've finished downloading the messages!
-        
-        //Let's check if there was an error:
-        if(error) {
-            NSLog(@"Error downloading message headers:%@", error);
-        }
-        
-        NSLog(@"messages count:%d", fetchedMessages.count);
-        
-        fetchedHeaders = fetchedMessages;
-        MCOIMAPMessage *first = fetchedMessages[0];
-        
-        self.earliestMessageReceivedDate = first.header.receivedDate;
-        NSLog(@"earliest receive date %@ %@", first.header.receivedDate, self.earliestMessageReceivedDate);
-
-        [self setInboxCountLabel];
-        
-        
-        
-            }];
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -257,7 +220,16 @@
 
 - (IBAction)valueChanged:(id)sender
 {
+  
     [self setInboxCountLabel];
+    
+    
+}
+
+- (IBAction)startPlay:(id)sender {
+    //show the play controller modally
+    [_app presentInboxPlayViewController];
+    [_app inboxPlayStarted];
 }
 
 
@@ -266,7 +238,10 @@
 	// The segmented control was clicked, handle it here
 	UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     
-    int index = segmentedControl.selectedSegmentIndex;
+    _app.segmentIndex = segmentedControl.selectedSegmentIndex;
+    [_app presentAppSegment];
+    
+    /*
     
     if (index == 0){
         CKListsViewController *listsController = [[CKListsViewController alloc] init];
@@ -285,12 +260,13 @@
         [self.navigationController pushViewController:inboxController animated:NO];
         
     }
+     */
     
 	//NSLog(@"Segment clicked: %d", segmentedControl.selectedSegmentIndex);
     
 }
 
-- (void)showPrimaryNavBar:(int)primaryNavSegmentedIndex{
+- (void)showPrimaryNavBar{
     
     NSArray *segmentTextContent = [NSArray arrayWithObjects:[UIImage imageNamed:@"lists-icon.png"], [UIImage imageNamed:@"tasks-icon.png"],[UIImage imageNamed:@"inbox-icon.png"],nil];
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
@@ -304,8 +280,8 @@
     
 	self.navigationItem.titleView = segmentedControl;
     
-    NSLog(@"segmentedIndex %d", self.segmentIndex);
-
+    NSLog(@"segmentedIndex inboxViewController %d", self.segmentIndex);
+    
     
 }
 

@@ -7,28 +7,40 @@
 //
 
 /** 
- The CKEmailAccount model object is used to manage the users IMAP mail accounts.
+ The CKEmailAccount model object is used to manage a user's IMAP mail account.
  
- It uses the keychain to store credentials so that the user doesn't have to login
- over and over again across devices...for ios7 it will be kept in the cloud.
+ It uses the keychain to store credentials so that the user doesn't have to login over and over again...for ios7 it will be kept in the cloud keychain so it can be synced across devices.
  
  */
 
-#import <Foundation/Foundation.h>
+
+#import "MailCore/MailCore.h"
 
 @interface CKEmailAccount : NSObject
 
-@property NSString *username;
-@property NSString *password;
-@property NSString *host;
-@property int port;
+@property MCOIMAPSession *session;
 
--(void)credentialsDidPass;
--(void)create;
--(void)update;
+- (id)initWithCredentials:(NSDictionary *)credentials;
 
--(void)headersDidLoad;
+//accounts
+/*
+- (void)createAccount;
+- (void)updateAccount;
+- (void)deleteAccount;
+*/
 
+//headers
+- (void)loadHeaders;
+- (void)saveHeadersLocally:(NSArray *)headers;
+- (void)clearLocalHeaders;
+- (NSArray *)fetchHeadersFromStartDate:(NSDate *)startDate;
+- (NSDate *)fetchEarliestMessageReceivedDate;
 
+//messages
+/*
+- (void)sendMessage;
+- (void)archiveMessage:(MCOIMAPMessage *)message toFolderName:(NSString *)folder;
+- (void)loadMessagesFromHeaders:(NSArray *)headers;
+ */
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4017239817ABE20800F97442 /* CKInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017239717ABE20800F97442 /* CKInbox.m */; };
+		4017239917ABE20800F97442 /* CKInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017239717ABE20800F97442 /* CKInbox.m */; };
+		401723F317AC218500F97442 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401723F217AC218500F97442 /* CoreData.framework */; };
 		405756E017A3177D00735F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756DF17A3177D00735F69 /* UIKit.framework */; };
 		405756E217A3177D00735F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E117A3177D00735F69 /* Foundation.framework */; };
 		405756E417A3177D00735F69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E317A3177D00735F69 /* CoreGraphics.framework */; };
@@ -86,6 +89,19 @@
 		405758A117AABE7100735F69 /* fields-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758A017AABE7100735F69 /* fields-login.png */; };
 		405758AC17ABB7DA00735F69 /* button-signup-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758AA17ABB7DA00735F69 /* button-signup-down.png */; };
 		405758AD17ABB7DA00735F69 /* button-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758AB17ABB7DA00735F69 /* button-signup.png */; };
+		40C5A30A17AD237100EA140A /* CKInboxPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */; };
+		40C5A30B17AD237100EA140A /* CKInboxPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */; };
+		40C5A31417AD5A6800EA140A /* InboxData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */; };
+		40C5A32817ADDB1600EA140A /* CKInboxMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */; };
+		40C5A33617AE64CF00EA140A /* CKInboxActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A33417AE64CE00EA140A /* CKInboxActionBar.m */; };
+		40C5A33717AE64CF00EA140A /* CKInboxActionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33517AE64CE00EA140A /* CKInboxActionBar.xib */; };
+		40C5A33A17AFB1D100EA140A /* deadline-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33817AFB1D100EA140A /* deadline-calendar@2x.png */; };
+		40C5A33B17AFB1D100EA140A /* deadline-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33917AFB1D100EA140A /* deadline-calendar.png */; };
+		40C5A33E17AFC60400EA140A /* CKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A33D17AFC60400EA140A /* CKUtility.m */; };
+		40C5A34117AFDF5A00EA140A /* action@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33F17AFDF5A00EA140A /* action@2x.png */; };
+		40C5A34217AFDF5A00EA140A /* action.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A34017AFDF5A00EA140A /* action.png */; };
+		40C5A34517AFE08C00EA140A /* skip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A34317AFE08C00EA140A /* skip@2x.png */; };
+		40C5A34617AFE08C00EA140A /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A34417AFE08C00EA140A /* skip.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +157,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4017239617ABE20800F97442 /* CKInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInbox.h; sourceTree = "<group>"; };
+		4017239717ABE20800F97442 /* CKInbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInbox.m; sourceTree = "<group>"; };
+		401723F217AC218500F97442 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		405756DC17A3177D00735F69 /* Coordel iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordel iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		405756DF17A3177D00735F69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		405756E117A3177D00735F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -230,6 +249,23 @@
 		405758A017AABE7100735F69 /* fields-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fields-login.png"; sourceTree = "<group>"; };
 		405758AA17ABB7DA00735F69 /* button-signup-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-signup-down.png"; sourceTree = "<group>"; };
 		405758AB17ABB7DA00735F69 /* button-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-signup.png"; sourceTree = "<group>"; };
+		40C5A30717AD237100EA140A /* CKInboxPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxPlayViewController.h; sourceTree = "<group>"; };
+		40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxPlayViewController.m; sourceTree = "<group>"; };
+		40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxPlayViewController.xib; sourceTree = "<group>"; };
+		40C5A31317AD5A6800EA140A /* InboxData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InboxData.xcdatamodel; sourceTree = "<group>"; };
+		40C5A32617ADDB1600EA140A /* CKInboxMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxMessageView.h; sourceTree = "<group>"; };
+		40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxMessageView.m; sourceTree = "<group>"; };
+		40C5A33317AE64CD00EA140A /* CKInboxActionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxActionBar.h; sourceTree = "<group>"; };
+		40C5A33417AE64CE00EA140A /* CKInboxActionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxActionBar.m; sourceTree = "<group>"; };
+		40C5A33517AE64CE00EA140A /* CKInboxActionBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxActionBar.xib; sourceTree = "<group>"; };
+		40C5A33817AFB1D100EA140A /* deadline-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deadline-calendar@2x.png"; sourceTree = "<group>"; };
+		40C5A33917AFB1D100EA140A /* deadline-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deadline-calendar.png"; sourceTree = "<group>"; };
+		40C5A33C17AFC60300EA140A /* CKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUtility.h; sourceTree = "<group>"; };
+		40C5A33D17AFC60400EA140A /* CKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtility.m; sourceTree = "<group>"; };
+		40C5A33F17AFDF5A00EA140A /* action@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action@2x.png"; sourceTree = "<group>"; };
+		40C5A34017AFDF5A00EA140A /* action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action.png; sourceTree = "<group>"; };
+		40C5A34317AFE08C00EA140A /* skip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skip@2x.png"; sourceTree = "<group>"; };
+		40C5A34417AFE08C00EA140A /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401723F317AC218500F97442 /* CoreData.framework in Frameworks */,
 				4057585517A7C61000735F69 /* libMailCore-ios.a in Frameworks */,
 				4057573817A3EBAF00735F69 /* SystemConfiguration.framework in Frameworks */,
 				4057573617A3EB9B00735F69 /* StoreKit.framework in Frameworks */,
@@ -291,6 +328,7 @@
 		405756DE17A3177D00735F69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				401723F217AC218500F97442 /* CoreData.framework */,
 				4057573717A3EBAF00735F69 /* SystemConfiguration.framework */,
 				4057573517A3EB9B00735F69 /* StoreKit.framework */,
 				4057573317A3EB9300735F69 /* Security.framework */,
@@ -323,6 +361,8 @@
 				4057580517A50A1D00735F69 /* LocalizedConstants.m */,
 				4057580717A50A3900735F69 /* Constants.h */,
 				4057580817A50A3A00735F69 /* Constants.m */,
+				40C5A33C17AFC60300EA140A /* CKUtility.h */,
+				40C5A33D17AFC60400EA140A /* CKUtility.m */,
 			);
 			path = Coordel;
 			sourceTree = "<group>";
@@ -360,6 +400,7 @@
 		4057571A17A3183F00735F69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				40C5A31B17AD602000EA140A /* Inbox */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -419,6 +460,12 @@
 		405757B317A477FE00735F69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				40C5A34317AFE08C00EA140A /* skip@2x.png */,
+				40C5A34417AFE08C00EA140A /* skip.png */,
+				40C5A33F17AFDF5A00EA140A /* action@2x.png */,
+				40C5A34017AFDF5A00EA140A /* action.png */,
+				40C5A33817AFB1D100EA140A /* deadline-calendar@2x.png */,
+				40C5A33917AFB1D100EA140A /* deadline-calendar.png */,
 				405758AA17ABB7DA00735F69 /* button-signup-down.png */,
 				405758AB17ABB7DA00735F69 /* button-signup.png */,
 				405758A017AABE7100735F69 /* fields-login.png */,
@@ -474,6 +521,12 @@
 				405757F817A480DC00735F69 /* CKInboxViewController.h */,
 				405757F917A480DC00735F69 /* CKInboxViewController.m */,
 				4057580F17A6DD9100735F69 /* CKInboxViewController.xib */,
+				40C5A30717AD237100EA140A /* CKInboxPlayViewController.h */,
+				40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */,
+				40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */,
+				40C5A33317AE64CD00EA140A /* CKInboxActionBar.h */,
+				40C5A33417AE64CE00EA140A /* CKInboxActionBar.m */,
+				40C5A33517AE64CE00EA140A /* CKInboxActionBar.xib */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -511,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				4057586317A9995500735F69 /* Inbox */,
+				40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -520,6 +574,8 @@
 			children = (
 				4057585F17A98E1500735F69 /* CKEmailAccount.h */,
 				4057586017A98E1500735F69 /* CKEmailAccount.m */,
+				4017239617ABE20800F97442 /* CKInbox.h */,
+				4017239717ABE20800F97442 /* CKInbox.m */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -541,6 +597,15 @@
 				4057589A17AAB4A700735F69 /* CKSignupViewController.m */,
 			);
 			name = Access;
+			sourceTree = "<group>";
+		};
+		40C5A31B17AD602000EA140A /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A32617ADDB1600EA140A /* CKInboxMessageView.h */,
+				40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */,
+			);
+			name = Inbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -693,6 +758,14 @@
 				405758A117AABE7100735F69 /* fields-login.png in Resources */,
 				405758AC17ABB7DA00735F69 /* button-signup-down.png in Resources */,
 				405758AD17ABB7DA00735F69 /* button-signup.png in Resources */,
+				40C5A30B17AD237100EA140A /* CKInboxPlayViewController.xib in Resources */,
+				40C5A33717AE64CF00EA140A /* CKInboxActionBar.xib in Resources */,
+				40C5A33A17AFB1D100EA140A /* deadline-calendar@2x.png in Resources */,
+				40C5A33B17AFB1D100EA140A /* deadline-calendar.png in Resources */,
+				40C5A34117AFDF5A00EA140A /* action@2x.png in Resources */,
+				40C5A34217AFDF5A00EA140A /* action.png in Resources */,
+				40C5A34517AFE08C00EA140A /* skip@2x.png in Resources */,
+				40C5A34617AFE08C00EA140A /* skip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +817,12 @@
 				4057589117AA723B00735F69 /* CKLoginViewController.m in Sources */,
 				4057589417AA735E00735F69 /* CKAccessViewController.m in Sources */,
 				4057589B17AAB4A900735F69 /* CKSignupViewController.m in Sources */,
+				4017239817ABE20800F97442 /* CKInbox.m in Sources */,
+				40C5A30A17AD237100EA140A /* CKInboxPlayViewController.m in Sources */,
+				40C5A31417AD5A6800EA140A /* InboxData.xcdatamodeld in Sources */,
+				40C5A32817ADDB1600EA140A /* CKInboxMessageView.m in Sources */,
+				40C5A33617AE64CF00EA140A /* CKInboxActionBar.m in Sources */,
+				40C5A33E17AFC60400EA140A /* CKUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +839,7 @@
 				405757FB17A480DC00735F69 /* CKInboxViewController.m in Sources */,
 				405757FF17A480F700735F69 /* CKSettingsViewController.m in Sources */,
 				4057586217A98E1500735F69 /* CKEmailAccount.m in Sources */,
+				4017239917ABE20800F97442 /* CKInbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,6 +1065,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				40C5A31317AD5A6800EA140A /* InboxData.xcdatamodel */,
+			);
+			currentVersion = 40C5A31317AD5A6800EA140A /* InboxData.xcdatamodel */;
+			path = InboxData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 405756D417A3177D00735F69 /* Project object */;
 }

@@ -16,3 +16,17 @@
 #pragma mark - User Defaults Keys
 // Class key
 extern NSString *const kCKUserDefaultsAfterFirstLaunch;
+extern NSString *const kCKUserDefaultsInboxSliderDate;
+extern NSString *const kCKUserDefaultsInboxPlayBatchSize;
+
+
+
+
+#pragma mark - Core Data Keys
+extern NSString *const kCKInboxDataMessagesEntity;
+extern NSString *const kCKInboxDataMessagesEntityMessageIDKey;
+extern NSString *const kCKInboxDataMessagesEntityReceivedDateKey;
+extern NSString *const kCKInboxDataMessagesEntityTypeKey;
+extern NSString *const kCKInboxDataMessagesEntityUIDKey;
+extern NSString *const kCKInboxDataMessagesEntityUsernameKey;
+

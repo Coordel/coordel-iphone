@@ -6,19 +6,20 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
+#import "AppDelegate.h"
+
 #import "CKBaseSegmentedViewController.h"
-#import "SWRevealViewController.h"
-#import "CKListsViewController.h"
-#import "CKTasksViewController.h"
-#import "CKInboxViewController.h"
+
+
 
 @interface CKBaseSegmentedViewController ()
+
+@property AppDelegate *app;
 
 @end
 
 @implementation CKBaseSegmentedViewController
 
-@synthesize segmentIndex;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,22 +30,15 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self showPrimaryNavBar:self.segmentIndex];
+    [self showPrimaryNavBar];
     
-    SWRevealViewController *revealController = [self revealViewController];
-    
-    [self.navigationController.navigationBar addGestureRecognizer:revealController.panGestureRecognizer];
-    
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
-    
-    self.navigationItem.leftBarButtonItem = revealButtonItem;
-
-
+    _app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+   
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -58,11 +52,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showPrimaryNavBar:(int)primaryNavSegmentedIndex{
+
+- (void)showPrimaryNavBar{
     
     NSArray *segmentTextContent = [NSArray arrayWithObjects:[UIImage imageNamed:@"lists-icon.png"], [UIImage imageNamed:@"tasks-icon.png"],[UIImage imageNamed:@"inbox-icon.png"],nil];
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
-    NSLog(@"segmentedIndex %d", self.segmentIndex);
+    NSLog(@"segmentedIndex baseSegmentedController %d", self.segmentIndex);
 	segmentedControl.selectedSegmentIndex = self.segmentIndex;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -102,11 +97,15 @@
 
 - (IBAction)segmentAction:(id)sender
 {
+    
+        
 	// The segmented control was clicked, handle it here
 	UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     
-    int index = segmentedControl.selectedSegmentIndex;
+    _app.segmentIndex = segmentedControl.selectedSegmentIndex;
+    [_app presentAppSegment];
     
+    /*
     if (index == 0){
         CKListsViewController *listsController = [[CKListsViewController alloc] init];
         listsController.segmentIndex=0;
@@ -128,7 +127,7 @@
                                              animated: NO];
         
     }
-    
+    */
 	//NSLog(@"Segment clicked: %d", segmentedControl.selectedSegmentIndex);
 
 }

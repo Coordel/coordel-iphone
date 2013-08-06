@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.signUpView.emailField.hidden = true;
+    
     [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coordel-logo.png"]]];
     
     [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"button-signup.png"] forState:UIControlStateNormal];

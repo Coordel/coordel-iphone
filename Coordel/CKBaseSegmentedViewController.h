@@ -12,4 +12,6 @@
 
 @property int segmentIndex;
 
+- (void)showPrimaryNavBar;
+
 @end

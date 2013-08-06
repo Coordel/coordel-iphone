@@ -7,6 +7,7 @@
 //
 
 #import "CKListsViewController.h"
+#import "SWRevealViewController.h"
 
 @interface CKListsViewController ()
 
@@ -27,7 +28,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    SWRevealViewController *revealController = [self revealViewController];
+    
+    [self.navigationController.navigationBar addGestureRecognizer:revealController.panGestureRecognizer];
+    
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    
+    self.navigationItem.leftBarButtonItem = revealButtonItem;
     self.navigationController.navigationBar.tintColor = kCKColorLists;
+    self.segmentIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning

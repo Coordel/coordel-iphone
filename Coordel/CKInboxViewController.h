@@ -12,12 +12,17 @@
 
 @property int segmentIndex;
 
-
 @property (weak, nonatomic) IBOutlet UISlider *slider;
+
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *inboxCount;
+
+- (void)showPrimaryNavBar;
 
 - (IBAction)valueChanged:(id)sender;
 
+- (IBAction)startPlay:(id)sender;
 
 @end
