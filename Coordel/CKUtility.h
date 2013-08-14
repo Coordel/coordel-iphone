@@ -10,6 +10,6 @@
 
 @interface CKUtility : NSObject
 
--(id)getUserDefault: (NSString *)defaultKey;
+
 
 @end

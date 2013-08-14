@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Coordel/CKInboxViewController.m"
-         timestampString = "397480063.468695"
+         timestampString = "397659222.238057"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "271"
-         endingLineNumber = "271"
+         startingLineNumber = "282"
+         endingLineNumber = "282"
          landmarkName = "-showPrimaryNavBar"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Coordel/CKInboxViewController.m"
-         timestampString = "397480063.468695"
+         timestampString = "397659222.238057"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "239"
-         endingLineNumber = "239"
+         startingLineNumber = "250"
+         endingLineNumber = "250"
          landmarkName = "-segmentAction:"
          landmarkType = "5">
       </FileBreakpoint>

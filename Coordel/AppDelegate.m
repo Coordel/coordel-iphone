@@ -17,14 +17,17 @@
 //application controllers
 #import "SWRevealViewController.h"
 #import "CKRevealViewController.h"
-#import "CKListsViewController.h"
-#import "CKTasksViewController.h"
+#import "CKListsSegmentViewController.h"
+#import "CKTasksSegmentViewController.h"
 #import "CKInboxViewController.h"
 #import "CKSettingsViewController.h"
 #import "CKInboxPlayViewController.h"
 
 //application model
 #import "CKInbox.h"
+#import "CKTask.h"
+#import "CKList.h"
+#import "CKUser.h"
 
 @interface AppDelegate() <SWRevealViewControllerDelegate>
 
@@ -52,10 +55,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    //Parse subclasses
+    
+    [CKTask registerSubclass];
+    [CKList registerSubclass];
+    [CKUser registerSubclass];
     /*********************************************************************************************/
     //Parse credentials
     [Parse setApplicationId:@"cWkn0La7kkYw980gL1AdUo4Pwljnttgoy4MeWAIq"
                   clientKey:@"2JaNT7bnrVoQ1ZLrvfRWh7BSSF8RKCC0yHnwk046"];
+    
+    // ****************************************************************************
+    // Create or Login a user
+    // ****************************************************************************
+    /*
+     Feel free to modify this section or extend the application to include a login and register screen.
+     This little piece of code will create a new user called Matt. If this user already exists, it will simply
+     log Matt into the app. This is not the typical behaviour you would want, but it will allow you to play
+     with object relationships without having to worry too much about user management. To learn more about
+     the PFUser class take a look at the documentation here https://www.parse.com/docs/ios_guide#users
+     */
+    
+    CKUser *user = [CKUser object];
+    user.username = @"jeffgorder";
+    user.password = @"password";
+    user.email = @"jeffgorder@gmail.com";
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Hooray! Let them use the app now.
+        } else {
+            //add a default private list
+            
+            [PFUser logInWithUsername:@"jeffgorder" password:@"password"];
+        }
+    }];
     
     //Parse analytics
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
@@ -114,7 +148,7 @@
 {
     _segmentIndex = 1;
         
-    CKTasksViewController *frontViewController = [[CKTasksViewController alloc] init];
+    CKTasksSegmentViewController *frontViewController = [[CKTasksSegmentViewController alloc] init];
 	CKRevealViewController *rearViewController = [[CKRevealViewController alloc] init];
 	
 	UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
@@ -199,11 +233,11 @@
     UINavigationController *navigationController;
     
     if (_segmentIndex == 0){
-        CKListsViewController *listControl = [[CKListsViewController alloc]init];
+        CKListsSegmentViewController *listControl = [[CKListsSegmentViewController alloc]init];
         listControl.segmentIndex = 0;
         navigationController = [[UINavigationController alloc] initWithRootViewController:listControl];
     } else if (_segmentIndex == 1){
-        CKTasksViewController *taskControl = [[CKTasksViewController alloc]init];
+        CKTasksSegmentViewController *taskControl = [[CKTasksSegmentViewController alloc]init];
         taskControl.segmentIndex = 1;
         navigationController = [[UINavigationController alloc] initWithRootViewController:taskControl];
         
@@ -222,7 +256,6 @@
     //create the controller
     _inboxPlayViewController = [[CKInboxPlayViewController alloc] init];
     _inboxPlayViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    //_inboxPlayViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.window.rootViewController presentViewController:_inboxPlayViewController animated:YES completion: nil];
 
 }

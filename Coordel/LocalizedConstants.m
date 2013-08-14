@@ -13,3 +13,6 @@
 #define kLocalizedTasks NSLocalizedString(@"Tasks", @"Tasks are a unit of work")
 #define kLocalizedInbox NSLocalizedString(@"Inbox", @"Inbox is where all e-mail and new work invitations arrive")
 #define kLocalizedSettings NSLocalizedString(@"Settings", @"Settings is where the user sets preferences for the application")
+
+#define kLocalizedQuickList NSLocalizedString(@"Quick List", @"Default user list")
+#define kLocalizedResponsible NSLocalizedString(@"Responsible", @"Person in change of a list")

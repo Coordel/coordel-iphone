@@ -10,8 +10,9 @@
 
 #import "SWRevealViewController.h"
 #import "CKInboxViewController.h"
-#import "CKListsViewController.h"
-#import "CKTasksViewController.h"
+#import "CKListsSegmentViewController.h"
+#import "CKTasksSegmentViewController.h"
+#import "CKInboxPlayViewController.h"
 #import "MailCore/MailCore.h"
 #import "CKInbox.h"
 
@@ -226,11 +227,6 @@
     
 }
 
-- (IBAction)startPlay:(id)sender {
-    //show the play controller modally
-    [_app presentInboxPlayViewController];
-    [_app inboxPlayStarted];
-}
 
 
 - (IBAction)segmentAction:(id)sender
@@ -272,7 +268,6 @@
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
     segmentedControl.selectedSegmentIndex = self.segmentIndex;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	segmentedControl.frame = CGRectMake(0, 0, 150, 30);
 	[segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
 	
@@ -285,4 +280,18 @@
     
 }
 
+- (IBAction)startPlay:(id)sender {
+    //show the play controller modally
+    [_app inboxPlayStarted];
+    //[_app presentInboxPlayViewController];
+    //create the controller
+    
+    CKInboxPlayViewController *play = [[CKInboxPlayViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:play];
+    nav.navigationBar.tintColor = kCKColorInbox;
+    
+    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nav  animated:YES completion: nil];
+    //[self.navigationController pushViewController:play animated:YES];
+}
 @end

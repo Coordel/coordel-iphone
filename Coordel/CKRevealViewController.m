@@ -9,8 +9,8 @@
 
 #import "SWRevealViewController.h"
 #import "CKRevealViewController.h"
-#import "CKListsViewController.h"
-#import "CKTasksViewController.h"
+#import "CKListsSegmentViewController.h"
+#import "CKTasksSegmentViewController.h"
 #import "CKInboxViewController.h"
 #import "CKSettingsViewController.h"
 
@@ -134,9 +134,9 @@
 	if (row == 1)
 	{
 		// Now let's see if we're not attempting to swap the current listsViewController for a new instance of ITSELF, which'd be highly redundant.
-        if ( ![frontNavigationController.topViewController isKindOfClass:[CKListsViewController class]] )
+        if ( ![frontNavigationController.topViewController isKindOfClass:[CKListsSegmentViewController class]] )
         {
-			CKListsViewController *listsViewController = [[CKListsViewController alloc] init];
+			CKListsSegmentViewController *listsViewController = [[CKListsSegmentViewController alloc] init];
             
             listsViewController.segmentIndex = 0;
             
@@ -157,9 +157,9 @@
 	else if (row == 2)
 	{
 		// Now let's see if we're not attempting to swap the current frontViewController for a new instance of ITSELF, which'd be highly redundant.
-        if ( ![frontNavigationController.topViewController isKindOfClass:[CKTasksViewController class]] )
+        if ( ![frontNavigationController.topViewController isKindOfClass:[CKTasksSegmentViewController class]] )
         {
-			CKTasksViewController *tasksViewController = [[CKTasksViewController alloc] init];
+			CKTasksSegmentViewController *tasksViewController = [[CKTasksSegmentViewController alloc] init];
             
             tasksViewController.segmentIndex = 1;
 

@@ -10,14 +10,15 @@
 		4017239817ABE20800F97442 /* CKInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017239717ABE20800F97442 /* CKInbox.m */; };
 		4017239917ABE20800F97442 /* CKInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017239717ABE20800F97442 /* CKInbox.m */; };
 		401723F317AC218500F97442 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401723F217AC218500F97442 /* CoreData.framework */; };
+		40351C8617BBA90700CDADA5 /* CKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40351C8417BBA90700CDADA5 /* CKListViewController.m */; };
+		40351C8717BBA90700CDADA5 /* CKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40351C8417BBA90700CDADA5 /* CKListViewController.m */; };
+		40351C8817BBA90700CDADA5 /* CKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40351C8517BBA90700CDADA5 /* CKListViewController.xib */; };
+		40351C8917BBA90700CDADA5 /* CKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40351C8517BBA90700CDADA5 /* CKListViewController.xib */; };
 		405756E017A3177D00735F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756DF17A3177D00735F69 /* UIKit.framework */; };
 		405756E217A3177D00735F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E117A3177D00735F69 /* Foundation.framework */; };
 		405756E417A3177D00735F69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E317A3177D00735F69 /* CoreGraphics.framework */; };
 		405756EC17A3177D00735F69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 405756EB17A3177D00735F69 /* main.m */; };
 		405756F017A3177D00735F69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405756EF17A3177D00735F69 /* AppDelegate.m */; };
-		405756F217A3177D00735F69 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 405756F117A3177D00735F69 /* Default.png */; };
-		405756F417A3177D00735F69 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405756F317A3177D00735F69 /* Default@2x.png */; };
-		405756F617A3177D00735F69 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405756F517A3177D00735F69 /* Default-568h@2x.png */; };
 		4057570417A3177D00735F69 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057570317A3177D00735F69 /* SenTestingKit.framework */; };
 		4057570517A3177D00735F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756DF17A3177D00735F69 /* UIKit.framework */; };
 		4057570617A3177D00735F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E117A3177D00735F69 /* Foundation.framework */; };
@@ -27,7 +28,6 @@
 		4057572317A3E91C00735F69 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057572117A3E91C00735F69 /* SWRevealViewController.m */; };
 		4057572517A3EA9C00735F69 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572417A3EA9C00735F69 /* Parse.framework */; };
 		4057572617A3EA9C00735F69 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572417A3EA9C00735F69 /* Parse.framework */; };
-		4057572817A3EB3200735F69 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572717A3EB3200735F69 /* AudioToolbox.framework */; };
 		4057572A17A3EB4100735F69 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572917A3EB4100735F69 /* CFNetwork.framework */; };
 		4057572C17A3EB5A00735F69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572B17A3EB5A00735F69 /* CoreLocation.framework */; };
 		4057572E17A3EB6100735F69 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572D17A3EB6100735F69 /* libz.1.1.3.dylib */; };
@@ -38,28 +38,12 @@
 		4057573817A3EBAF00735F69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057573717A3EBAF00735F69 /* SystemConfiguration.framework */; };
 		4057574017A3F26F00735F69 /* CKRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057573F17A3F26F00735F69 /* CKRevealViewController.m */; };
 		4057574117A3F26F00735F69 /* CKRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057573F17A3F26F00735F69 /* CKRevealViewController.m */; };
-		405757C417A478BA00735F69 /* inbox-icon-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757B417A478BA00735F69 /* inbox-icon-red.png */; };
-		405757C517A478BA00735F69 /* inbox-icon-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757B517A478BA00735F69 /* inbox-icon-red@2x.png */; };
-		405757C617A478BA00735F69 /* inbox-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757B617A478BA00735F69 /* inbox-icon.png */; };
-		405757C717A478BA00735F69 /* inbox-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757B717A478BA00735F69 /* inbox-icon@2x.png */; };
-		405757C817A478BA00735F69 /* lists-icon-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757B817A478BA00735F69 /* lists-icon-green.png */; };
-		405757C917A478BA00735F69 /* lists-icon-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757B917A478BA00735F69 /* lists-icon-green@2x.png */; };
-		405757CA17A478BA00735F69 /* lists-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757BA17A478BA00735F69 /* lists-icon.png */; };
-		405757CB17A478BA00735F69 /* lists-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757BB17A478BA00735F69 /* lists-icon@2x.png */; };
-		405757CC17A478BA00735F69 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757BC17A478BA00735F69 /* reveal-icon.png */; };
-		405757CD17A478BA00735F69 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757BD17A478BA00735F69 /* reveal-icon@2x.png */; };
-		405757CE17A478BA00735F69 /* settings-icon-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757BE17A478BA00735F69 /* settings-icon-black.png */; };
-		405757CF17A478BA00735F69 /* settings-icon-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757BF17A478BA00735F69 /* settings-icon-black@2x.png */; };
-		405757D017A478BA00735F69 /* tasks-icon-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757C017A478BA00735F69 /* tasks-icon-blue.png */; };
-		405757D117A478BA00735F69 /* tasks-icon-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757C117A478BA00735F69 /* tasks-icon-blue@2x.png */; };
-		405757D217A478BA00735F69 /* tasks-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757C217A478BA00735F69 /* tasks-icon.png */; };
-		405757D317A478BA00735F69 /* tasks-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405757C317A478BA00735F69 /* tasks-icon@2x.png */; };
 		405757DE17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */; };
 		405757DF17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */; };
-		405757F217A480A400735F69 /* CKListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F117A480A400735F69 /* CKListsViewController.m */; };
-		405757F317A480A400735F69 /* CKListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F117A480A400735F69 /* CKListsViewController.m */; };
-		405757F617A480C300735F69 /* CKTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F517A480C300735F69 /* CKTasksViewController.m */; };
-		405757F717A480C300735F69 /* CKTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F517A480C300735F69 /* CKTasksViewController.m */; };
+		405757F217A480A400735F69 /* CKListsSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F117A480A400735F69 /* CKListsSegmentViewController.m */; };
+		405757F317A480A400735F69 /* CKListsSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F117A480A400735F69 /* CKListsSegmentViewController.m */; };
+		405757F617A480C300735F69 /* CKTasksSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F517A480C300735F69 /* CKTasksSegmentViewController.m */; };
+		405757F717A480C300735F69 /* CKTasksSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F517A480C300735F69 /* CKTasksSegmentViewController.m */; };
 		405757FA17A480DC00735F69 /* CKInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F917A480DC00735F69 /* CKInboxViewController.m */; };
 		405757FB17A480DC00735F69 /* CKInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F917A480DC00735F69 /* CKInboxViewController.m */; };
 		405757FE17A480F700735F69 /* CKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757FD17A480F700735F69 /* CKSettingsViewController.m */; };
@@ -68,40 +52,58 @@
 		4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057580517A50A1D00735F69 /* LocalizedConstants.m */; };
 		4057580917A50A3A00735F69 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057580817A50A3A00735F69 /* Constants.m */; };
 		4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057580F17A6DD9100735F69 /* CKInboxViewController.xib */; };
-		4057581217A6E9E300735F69 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581117A6E9E300735F69 /* play.png */; };
-		4057581417A6EA3300735F69 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581317A6EA3300735F69 /* play@2x.png */; };
-		4057581917A722BF00735F69 /* inbox-level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581817A722BF00735F69 /* inbox-level-1.png */; };
-		4057581B17A73A0900735F69 /* inbox-level-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057581A17A73A0900735F69 /* inbox-level-1@2x.png */; };
 		4057585517A7C61000735F69 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057584C17A7C5BB00735F69 /* libMailCore-ios.a */; };
-		4057585817A7FB4900735F69 /* graph-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057585617A7FB4900735F69 /* graph-placeholder@2x.png */; };
-		4057585917A7FB4900735F69 /* graph-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057585717A7FB4900735F69 /* graph-placeholder.png */; };
 		4057586117A98E1500735F69 /* CKEmailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057586017A98E1500735F69 /* CKEmailAccount.m */; };
 		4057586217A98E1500735F69 /* CKEmailAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057586017A98E1500735F69 /* CKEmailAccount.m */; };
 		4057587117A9BFC700735F69 /* CKWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057586F17A9BFC700735F69 /* CKWelcomeViewController.m */; };
 		4057587217A9BFC700735F69 /* CKWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057587017A9BFC700735F69 /* CKWelcomeViewController.xib */; };
 		4057588417A9DD8D00735F69 /* CKWelcomeChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057588217A9DD8C00735F69 /* CKWelcomeChildViewController.m */; };
 		4057588517A9DD8E00735F69 /* CKWelcomeChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4057588317A9DD8D00735F69 /* CKWelcomeChildViewController.xib */; };
-		4057588817AA6D4600735F69 /* coordel-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057588617AA6D4600735F69 /* coordel-logo@2x.png */; };
 		4057589117AA723B00735F69 /* CKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057589017AA723B00735F69 /* CKLoginViewController.m */; };
 		4057589417AA735E00735F69 /* CKAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057589317AA735C00735F69 /* CKAccessViewController.m */; };
 		4057589B17AAB4A900735F69 /* CKSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057589A17AAB4A700735F69 /* CKSignupViewController.m */; };
-		4057589F17AABA3B00735F69 /* coordel-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4057589E17AABA3B00735F69 /* coordel-logo.png */; };
-		405758A117AABE7100735F69 /* fields-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758A017AABE7100735F69 /* fields-login.png */; };
-		405758AC17ABB7DA00735F69 /* button-signup-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758AA17ABB7DA00735F69 /* button-signup-down.png */; };
-		405758AD17ABB7DA00735F69 /* button-signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 405758AB17ABB7DA00735F69 /* button-signup.png */; };
+		40612D2F17BA38E200736B1F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40612D2E17BA38E200736B1F /* Media.xcassets */; };
+		40612D3217BA474A00736B1F /* CKList.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3117BA474A00736B1F /* CKList.m */; };
+		40612D3317BA474A00736B1F /* CKList.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3117BA474A00736B1F /* CKList.m */; };
+		40612D3617BA662200736B1F /* CKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3517BA662200736B1F /* CKUser.m */; };
+		40612D3717BA662200736B1F /* CKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3517BA662200736B1F /* CKUser.m */; };
+		40612D3A17BA71F600736B1F /* CKListAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3917BA71F600736B1F /* CKListAssignment.m */; };
+		40612D3B17BA71F600736B1F /* CKListAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3917BA71F600736B1F /* CKListAssignment.m */; };
 		40C5A30A17AD237100EA140A /* CKInboxPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */; };
 		40C5A30B17AD237100EA140A /* CKInboxPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */; };
 		40C5A31417AD5A6800EA140A /* InboxData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */; };
 		40C5A32817ADDB1600EA140A /* CKInboxMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */; };
-		40C5A33617AE64CF00EA140A /* CKInboxActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A33417AE64CE00EA140A /* CKInboxActionBar.m */; };
-		40C5A33717AE64CF00EA140A /* CKInboxActionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33517AE64CE00EA140A /* CKInboxActionBar.xib */; };
-		40C5A33A17AFB1D100EA140A /* deadline-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33817AFB1D100EA140A /* deadline-calendar@2x.png */; };
-		40C5A33B17AFB1D100EA140A /* deadline-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33917AFB1D100EA140A /* deadline-calendar.png */; };
 		40C5A33E17AFC60400EA140A /* CKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A33D17AFC60400EA140A /* CKUtility.m */; };
-		40C5A34117AFDF5A00EA140A /* action@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A33F17AFDF5A00EA140A /* action@2x.png */; };
-		40C5A34217AFDF5A00EA140A /* action.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A34017AFDF5A00EA140A /* action.png */; };
-		40C5A34517AFE08C00EA140A /* skip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A34317AFE08C00EA140A /* skip@2x.png */; };
-		40C5A34617AFE08C00EA140A /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A34417AFE08C00EA140A /* skip.png */; };
+		40C5A35017B11F1000EA140A /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A34E17B11F1000EA140A /* RNGridMenu.m */; };
+		40C5A35117B11F1000EA140A /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A34E17B11F1000EA140A /* RNGridMenu.m */; };
+		40C5A35317B11F8200EA140A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C5A35217B11F8100EA140A /* Accelerate.framework */; };
+		40C5A38917B2667400EA140A /* CKTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A38717B2667400EA140A /* CKTaskViewController.m */; };
+		40C5A38A17B2667400EA140A /* CKTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A38817B2667400EA140A /* CKTaskViewController.xib */; };
+		40C5A38D17B279AD00EA140A /* CKTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A38C17B279AD00EA140A /* CKTask.m */; };
+		40C5A39017B51D3D00EA140A /* timer-buzzer.caf in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A38F17B51D3D00EA140A /* timer-buzzer.caf */; };
+		40C5A39217B5203A00EA140A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C5A39117B5203600EA140A /* AVFoundation.framework */; };
+		40C5A39317B520C200EA140A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057572717A3EB3200735F69 /* AudioToolbox.framework */; };
+		40C5A39B17B5659E00EA140A /* timer-success.caf in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A39A17B5659E00EA140A /* timer-success.caf */; };
+		40C5A39F17B57C3100EA140A /* CKTaskInformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A39D17B57C3000EA140A /* CKTaskInformViewController.m */; };
+		40C5A3A017B57C3100EA140A /* CKTaskInformViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A39E17B57C3000EA140A /* CKTaskInformViewController.xib */; };
+		40C5A3A317B57E7F00EA140A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C5A3A117B57E7D00EA140A /* AddressBook.framework */; };
+		40C5A3A417B57E7F00EA140A /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C5A3A217B57E7E00EA140A /* AddressBookUI.framework */; };
+		40C5A3AC17B6516A00EA140A /* THBubbleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3A717B6516A00EA140A /* THBubbleColor.m */; };
+		40C5A3AD17B6516A00EA140A /* THBubbleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3A717B6516A00EA140A /* THBubbleColor.m */; };
+		40C5A3AE17B6516A00EA140A /* THContactBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3A917B6516A00EA140A /* THContactBubble.m */; };
+		40C5A3AF17B6516A00EA140A /* THContactBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3A917B6516A00EA140A /* THContactBubble.m */; };
+		40C5A3B017B6516A00EA140A /* THContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3AB17B6516A00EA140A /* THContactPickerView.m */; };
+		40C5A3B117B6516A00EA140A /* THContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3AB17B6516A00EA140A /* THContactPickerView.m */; };
+		40C5A3C017B65D7500EA140A /* CKTaskAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3BF17B65D7500EA140A /* CKTaskAction.m */; };
+		40C5A3C117B65D7500EA140A /* CKTaskAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A3BF17B65D7500EA140A /* CKTaskAction.m */; };
+		40C5A3C617B6C1CF00EA140A /* CKTaskNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A3C517B6C1CF00EA140A /* CKTaskNameCell.xib */; };
+		40C5A3C717B6C1CF00EA140A /* CKTaskNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A3C517B6C1CF00EA140A /* CKTaskNameCell.xib */; };
+		40C5A41C17B7BB6700EA140A /* CKTaskNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A41B17B7BB6700EA140A /* CKTaskNameCell.m */; };
+		40C5A41D17B7BB6700EA140A /* CKTaskNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A41B17B7BB6700EA140A /* CKTaskNameCell.m */; };
+		40C5A49917B9263400EA140A /* CKTaskOwnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A49817B9263300EA140A /* CKTaskOwnerCell.m */; };
+		40C5A49A17B9263400EA140A /* CKTaskOwnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A49817B9263300EA140A /* CKTaskOwnerCell.m */; };
+		40C5A49C17B9265000EA140A /* CKTaskOwnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */; };
+		40C5A49D17B9265000EA140A /* CKTaskOwnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,9 @@
 		4017239617ABE20800F97442 /* CKInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInbox.h; sourceTree = "<group>"; };
 		4017239717ABE20800F97442 /* CKInbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInbox.m; sourceTree = "<group>"; };
 		401723F217AC218500F97442 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		40351C8317BBA90700CDADA5 /* CKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListViewController.h; sourceTree = "<group>"; };
+		40351C8417BBA90700CDADA5 /* CKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListViewController.m; sourceTree = "<group>"; };
+		40351C8517BBA90700CDADA5 /* CKListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKListViewController.xib; sourceTree = "<group>"; };
 		405756DC17A3177D00735F69 /* Coordel iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordel iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		405756DF17A3177D00735F69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		405756E117A3177D00735F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,9 +174,6 @@
 		405756ED17A3177D00735F69 /* Coordel iPhone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coordel iPhone-Prefix.pch"; sourceTree = "<group>"; };
 		405756EE17A3177D00735F69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		405756EF17A3177D00735F69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		405756F117A3177D00735F69 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		405756F317A3177D00735F69 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		405756F517A3177D00735F69 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4057570217A3177D00735F69 /* Coordel iPhoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coordel iPhoneTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4057570317A3177D00735F69 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4057570B17A3177D00735F69 /* Coordel iPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coordel iPhoneTests-Info.plist"; sourceTree = "<group>"; };
@@ -192,28 +194,12 @@
 		4057573717A3EBAF00735F69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4057573E17A3F26F00735F69 /* CKRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRevealViewController.h; sourceTree = "<group>"; };
 		4057573F17A3F26F00735F69 /* CKRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRevealViewController.m; sourceTree = "<group>"; };
-		405757B417A478BA00735F69 /* inbox-icon-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-icon-red.png"; sourceTree = "<group>"; };
-		405757B517A478BA00735F69 /* inbox-icon-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-icon-red@2x.png"; sourceTree = "<group>"; };
-		405757B617A478BA00735F69 /* inbox-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-icon.png"; sourceTree = "<group>"; };
-		405757B717A478BA00735F69 /* inbox-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-icon@2x.png"; sourceTree = "<group>"; };
-		405757B817A478BA00735F69 /* lists-icon-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lists-icon-green.png"; sourceTree = "<group>"; };
-		405757B917A478BA00735F69 /* lists-icon-green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lists-icon-green@2x.png"; sourceTree = "<group>"; };
-		405757BA17A478BA00735F69 /* lists-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lists-icon.png"; sourceTree = "<group>"; };
-		405757BB17A478BA00735F69 /* lists-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lists-icon@2x.png"; sourceTree = "<group>"; };
-		405757BC17A478BA00735F69 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
-		405757BD17A478BA00735F69 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
-		405757BE17A478BA00735F69 /* settings-icon-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon-black.png"; sourceTree = "<group>"; };
-		405757BF17A478BA00735F69 /* settings-icon-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon-black@2x.png"; sourceTree = "<group>"; };
-		405757C017A478BA00735F69 /* tasks-icon-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-icon-blue.png"; sourceTree = "<group>"; };
-		405757C117A478BA00735F69 /* tasks-icon-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-icon-blue@2x.png"; sourceTree = "<group>"; };
-		405757C217A478BA00735F69 /* tasks-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-icon.png"; sourceTree = "<group>"; };
-		405757C317A478BA00735F69 /* tasks-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-icon@2x.png"; sourceTree = "<group>"; };
 		405757DC17A47D3100735F69 /* CKBaseSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKBaseSegmentedViewController.h; sourceTree = "<group>"; };
 		405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKBaseSegmentedViewController.m; sourceTree = "<group>"; };
-		405757F017A480A400735F69 /* CKListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListsViewController.h; sourceTree = "<group>"; };
-		405757F117A480A400735F69 /* CKListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListsViewController.m; sourceTree = "<group>"; };
-		405757F417A480C300735F69 /* CKTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTasksViewController.h; sourceTree = "<group>"; };
-		405757F517A480C300735F69 /* CKTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTasksViewController.m; sourceTree = "<group>"; };
+		405757F017A480A400735F69 /* CKListsSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListsSegmentViewController.h; sourceTree = "<group>"; };
+		405757F117A480A400735F69 /* CKListsSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListsSegmentViewController.m; sourceTree = "<group>"; };
+		405757F417A480C300735F69 /* CKTasksSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTasksSegmentViewController.h; sourceTree = "<group>"; };
+		405757F517A480C300735F69 /* CKTasksSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTasksSegmentViewController.m; sourceTree = "<group>"; };
 		405757F817A480DC00735F69 /* CKInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxViewController.h; sourceTree = "<group>"; };
 		405757F917A480DC00735F69 /* CKInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxViewController.m; sourceTree = "<group>"; };
 		405757FC17A480F700735F69 /* CKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSettingsViewController.h; sourceTree = "<group>"; };
@@ -223,13 +209,7 @@
 		4057580717A50A3900735F69 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4057580817A50A3A00735F69 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		4057580F17A6DD9100735F69 /* CKInboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxViewController.xib; sourceTree = "<group>"; };
-		4057581117A6E9E300735F69 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
-		4057581317A6EA3300735F69 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
-		4057581817A722BF00735F69 /* inbox-level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-level-1.png"; sourceTree = "<group>"; };
-		4057581A17A73A0900735F69 /* inbox-level-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox-level-1@2x.png"; sourceTree = "<group>"; };
 		4057584117A7C5BA00735F69 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
-		4057585617A7FB4900735F69 /* graph-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph-placeholder@2x.png"; sourceTree = "<group>"; };
-		4057585717A7FB4900735F69 /* graph-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graph-placeholder.png"; sourceTree = "<group>"; };
 		4057585F17A98E1500735F69 /* CKEmailAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEmailAccount.h; sourceTree = "<group>"; };
 		4057586017A98E1500735F69 /* CKEmailAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKEmailAccount.m; sourceTree = "<group>"; };
 		4057586E17A9BFC700735F69 /* CKWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKWelcomeViewController.h; sourceTree = "<group>"; };
@@ -238,34 +218,57 @@
 		4057588117A9DD8C00735F69 /* CKWelcomeChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKWelcomeChildViewController.h; sourceTree = "<group>"; };
 		4057588217A9DD8C00735F69 /* CKWelcomeChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKWelcomeChildViewController.m; sourceTree = "<group>"; };
 		4057588317A9DD8D00735F69 /* CKWelcomeChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKWelcomeChildViewController.xib; sourceTree = "<group>"; };
-		4057588617AA6D4600735F69 /* coordel-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coordel-logo@2x.png"; sourceTree = "<group>"; };
 		4057588F17AA723B00735F69 /* CKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKLoginViewController.h; sourceTree = "<group>"; };
 		4057589017AA723B00735F69 /* CKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKLoginViewController.m; sourceTree = "<group>"; };
 		4057589217AA735C00735F69 /* CKAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAccessViewController.h; sourceTree = "<group>"; };
 		4057589317AA735C00735F69 /* CKAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAccessViewController.m; sourceTree = "<group>"; };
 		4057589917AAB4A500735F69 /* CKSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSignupViewController.h; sourceTree = "<group>"; };
 		4057589A17AAB4A700735F69 /* CKSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSignupViewController.m; sourceTree = "<group>"; };
-		4057589E17AABA3B00735F69 /* coordel-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coordel-logo.png"; sourceTree = "<group>"; };
-		405758A017AABE7100735F69 /* fields-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fields-login.png"; sourceTree = "<group>"; };
-		405758AA17ABB7DA00735F69 /* button-signup-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-signup-down.png"; sourceTree = "<group>"; };
-		405758AB17ABB7DA00735F69 /* button-signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-signup.png"; sourceTree = "<group>"; };
+		40612D2E17BA38E200736B1F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		40612D3017BA474A00736B1F /* CKList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKList.h; sourceTree = "<group>"; };
+		40612D3117BA474A00736B1F /* CKList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKList.m; sourceTree = "<group>"; };
+		40612D3417BA662200736B1F /* CKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUser.h; sourceTree = "<group>"; };
+		40612D3517BA662200736B1F /* CKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUser.m; sourceTree = "<group>"; };
+		40612D3817BA71F600736B1F /* CKListAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListAssignment.h; sourceTree = "<group>"; };
+		40612D3917BA71F600736B1F /* CKListAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListAssignment.m; sourceTree = "<group>"; };
 		40C5A30717AD237100EA140A /* CKInboxPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxPlayViewController.h; sourceTree = "<group>"; };
 		40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxPlayViewController.m; sourceTree = "<group>"; };
 		40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxPlayViewController.xib; sourceTree = "<group>"; };
 		40C5A31317AD5A6800EA140A /* InboxData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InboxData.xcdatamodel; sourceTree = "<group>"; };
 		40C5A32617ADDB1600EA140A /* CKInboxMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxMessageView.h; sourceTree = "<group>"; };
 		40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxMessageView.m; sourceTree = "<group>"; };
-		40C5A33317AE64CD00EA140A /* CKInboxActionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxActionBar.h; sourceTree = "<group>"; };
-		40C5A33417AE64CE00EA140A /* CKInboxActionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxActionBar.m; sourceTree = "<group>"; };
-		40C5A33517AE64CE00EA140A /* CKInboxActionBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxActionBar.xib; sourceTree = "<group>"; };
-		40C5A33817AFB1D100EA140A /* deadline-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deadline-calendar@2x.png"; sourceTree = "<group>"; };
-		40C5A33917AFB1D100EA140A /* deadline-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deadline-calendar.png"; sourceTree = "<group>"; };
 		40C5A33C17AFC60300EA140A /* CKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUtility.h; sourceTree = "<group>"; };
 		40C5A33D17AFC60400EA140A /* CKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtility.m; sourceTree = "<group>"; };
-		40C5A33F17AFDF5A00EA140A /* action@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action@2x.png"; sourceTree = "<group>"; };
-		40C5A34017AFDF5A00EA140A /* action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action.png; sourceTree = "<group>"; };
-		40C5A34317AFE08C00EA140A /* skip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skip@2x.png"; sourceTree = "<group>"; };
-		40C5A34417AFE08C00EA140A /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
+		40C5A34E17B11F1000EA140A /* RNGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNGridMenu.m; sourceTree = "<group>"; };
+		40C5A34F17B11F1000EA140A /* RNGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNGridMenu.h; sourceTree = "<group>"; };
+		40C5A35217B11F8100EA140A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		40C5A38617B2667400EA140A /* CKTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskViewController.h; sourceTree = "<group>"; };
+		40C5A38717B2667400EA140A /* CKTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskViewController.m; sourceTree = "<group>"; };
+		40C5A38817B2667400EA140A /* CKTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKTaskViewController.xib; sourceTree = "<group>"; };
+		40C5A38B17B279AD00EA140A /* CKTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTask.h; sourceTree = "<group>"; };
+		40C5A38C17B279AD00EA140A /* CKTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTask.m; sourceTree = "<group>"; };
+		40C5A38F17B51D3D00EA140A /* timer-buzzer.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "timer-buzzer.caf"; sourceTree = "<group>"; };
+		40C5A39117B5203600EA140A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		40C5A39A17B5659E00EA140A /* timer-success.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "timer-success.caf"; sourceTree = "<group>"; };
+		40C5A39C17B57C2F00EA140A /* CKTaskInformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskInformViewController.h; sourceTree = "<group>"; };
+		40C5A39D17B57C3000EA140A /* CKTaskInformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskInformViewController.m; sourceTree = "<group>"; };
+		40C5A39E17B57C3000EA140A /* CKTaskInformViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKTaskInformViewController.xib; sourceTree = "<group>"; };
+		40C5A3A117B57E7D00EA140A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		40C5A3A217B57E7E00EA140A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		40C5A3A617B6516A00EA140A /* THBubbleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THBubbleColor.h; sourceTree = "<group>"; };
+		40C5A3A717B6516A00EA140A /* THBubbleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THBubbleColor.m; sourceTree = "<group>"; };
+		40C5A3A817B6516A00EA140A /* THContactBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactBubble.h; sourceTree = "<group>"; };
+		40C5A3A917B6516A00EA140A /* THContactBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactBubble.m; sourceTree = "<group>"; };
+		40C5A3AA17B6516A00EA140A /* THContactPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactPickerView.h; sourceTree = "<group>"; };
+		40C5A3AB17B6516A00EA140A /* THContactPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerView.m; sourceTree = "<group>"; };
+		40C5A3BE17B65D7500EA140A /* CKTaskAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskAction.h; sourceTree = "<group>"; };
+		40C5A3BF17B65D7500EA140A /* CKTaskAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskAction.m; sourceTree = "<group>"; };
+		40C5A3C517B6C1CF00EA140A /* CKTaskNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKTaskNameCell.xib; sourceTree = "<group>"; };
+		40C5A41A17B7BB6700EA140A /* CKTaskNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskNameCell.h; sourceTree = "<group>"; };
+		40C5A41B17B7BB6700EA140A /* CKTaskNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskNameCell.m; sourceTree = "<group>"; };
+		40C5A49717B9263300EA140A /* CKTaskOwnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskOwnerCell.h; sourceTree = "<group>"; };
+		40C5A49817B9263300EA140A /* CKTaskOwnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskOwnerCell.m; sourceTree = "<group>"; };
+		40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKTaskOwnerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C5A3A317B57E7F00EA140A /* AddressBook.framework in Frameworks */,
+				40C5A3A417B57E7F00EA140A /* AddressBookUI.framework in Frameworks */,
+				40C5A39317B520C200EA140A /* AudioToolbox.framework in Frameworks */,
+				40C5A39217B5203A00EA140A /* AVFoundation.framework in Frameworks */,
+				40C5A35317B11F8200EA140A /* Accelerate.framework in Frameworks */,
 				401723F317AC218500F97442 /* CoreData.framework in Frameworks */,
 				4057585517A7C61000735F69 /* libMailCore-ios.a in Frameworks */,
 				4057573817A3EBAF00735F69 /* SystemConfiguration.framework in Frameworks */,
@@ -283,7 +291,6 @@
 				4057572E17A3EB6100735F69 /* libz.1.1.3.dylib in Frameworks */,
 				4057572C17A3EB5A00735F69 /* CoreLocation.framework in Frameworks */,
 				4057572A17A3EB4100735F69 /* CFNetwork.framework in Frameworks */,
-				4057572817A3EB3200735F69 /* AudioToolbox.framework in Frameworks */,
 				405756E017A3177D00735F69 /* UIKit.framework in Frameworks */,
 				405756E217A3177D00735F69 /* Foundation.framework in Frameworks */,
 				405756E417A3177D00735F69 /* CoreGraphics.framework in Frameworks */,
@@ -328,6 +335,10 @@
 		405756DE17A3177D00735F69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40C5A3A117B57E7D00EA140A /* AddressBook.framework */,
+				40C5A3A217B57E7E00EA140A /* AddressBookUI.framework */,
+				40C5A39117B5203600EA140A /* AVFoundation.framework */,
+				40C5A35217B11F8100EA140A /* Accelerate.framework */,
 				401723F217AC218500F97442 /* CoreData.framework */,
 				4057573717A3EBAF00735F69 /* SystemConfiguration.framework */,
 				4057573517A3EB9B00735F69 /* StoreKit.framework */,
@@ -400,6 +411,7 @@
 		4057571A17A3183F00735F69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				40C5A3C217B6C16200EA140A /* Task */,
 				40C5A31B17AD602000EA140A /* Inbox */,
 			);
 			name = Views;
@@ -423,10 +435,8 @@
 		4057571C17A3185A00735F69 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				405757B317A477FE00735F69 /* Assets */,
-				405756F117A3177D00735F69 /* Default.png */,
-				405756F317A3177D00735F69 /* Default@2x.png */,
-				405756F517A3177D00735F69 /* Default-568h@2x.png */,
+				40C5A38E17B51D2A00EA140A /* Sounds */,
+				40612D2E17BA38E200736B1F /* Media.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -434,6 +444,8 @@
 		4057571D17A3187100735F69 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				40C5A3A517B6513E00EA140A /* THContactPicker */,
+				40C5A34D17B11EED00EA140A /* RNGridMenu */,
 				4057571F17A3E91C00735F69 /* SWRevealViewController */,
 			);
 			name = External;
@@ -457,51 +469,14 @@
 			name = Reveal;
 			sourceTree = "<group>";
 		};
-		405757B317A477FE00735F69 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				40C5A34317AFE08C00EA140A /* skip@2x.png */,
-				40C5A34417AFE08C00EA140A /* skip.png */,
-				40C5A33F17AFDF5A00EA140A /* action@2x.png */,
-				40C5A34017AFDF5A00EA140A /* action.png */,
-				40C5A33817AFB1D100EA140A /* deadline-calendar@2x.png */,
-				40C5A33917AFB1D100EA140A /* deadline-calendar.png */,
-				405758AA17ABB7DA00735F69 /* button-signup-down.png */,
-				405758AB17ABB7DA00735F69 /* button-signup.png */,
-				405758A017AABE7100735F69 /* fields-login.png */,
-				4057589E17AABA3B00735F69 /* coordel-logo.png */,
-				4057588617AA6D4600735F69 /* coordel-logo@2x.png */,
-				4057585617A7FB4900735F69 /* graph-placeholder@2x.png */,
-				4057585717A7FB4900735F69 /* graph-placeholder.png */,
-				4057581817A722BF00735F69 /* inbox-level-1.png */,
-				4057581A17A73A0900735F69 /* inbox-level-1@2x.png */,
-				4057581117A6E9E300735F69 /* play.png */,
-				4057581317A6EA3300735F69 /* play@2x.png */,
-				405757B417A478BA00735F69 /* inbox-icon-red.png */,
-				405757B517A478BA00735F69 /* inbox-icon-red@2x.png */,
-				405757B617A478BA00735F69 /* inbox-icon.png */,
-				405757B717A478BA00735F69 /* inbox-icon@2x.png */,
-				405757B817A478BA00735F69 /* lists-icon-green.png */,
-				405757B917A478BA00735F69 /* lists-icon-green@2x.png */,
-				405757BA17A478BA00735F69 /* lists-icon.png */,
-				405757BB17A478BA00735F69 /* lists-icon@2x.png */,
-				405757BC17A478BA00735F69 /* reveal-icon.png */,
-				405757BD17A478BA00735F69 /* reveal-icon@2x.png */,
-				405757BE17A478BA00735F69 /* settings-icon-black.png */,
-				405757BF17A478BA00735F69 /* settings-icon-black@2x.png */,
-				405757C017A478BA00735F69 /* tasks-icon-blue.png */,
-				405757C117A478BA00735F69 /* tasks-icon-blue@2x.png */,
-				405757C217A478BA00735F69 /* tasks-icon.png */,
-				405757C317A478BA00735F69 /* tasks-icon@2x.png */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
 		405757D417A47A0000735F69 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				405757F017A480A400735F69 /* CKListsViewController.h */,
-				405757F117A480A400735F69 /* CKListsViewController.m */,
+				405757F017A480A400735F69 /* CKListsSegmentViewController.h */,
+				405757F117A480A400735F69 /* CKListsSegmentViewController.m */,
+				40351C8317BBA90700CDADA5 /* CKListViewController.h */,
+				40351C8417BBA90700CDADA5 /* CKListViewController.m */,
+				40351C8517BBA90700CDADA5 /* CKListViewController.xib */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -509,8 +484,14 @@
 		405757D517A47A0C00735F69 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				405757F417A480C300735F69 /* CKTasksViewController.h */,
-				405757F517A480C300735F69 /* CKTasksViewController.m */,
+				405757F417A480C300735F69 /* CKTasksSegmentViewController.h */,
+				405757F517A480C300735F69 /* CKTasksSegmentViewController.m */,
+				40C5A38617B2667400EA140A /* CKTaskViewController.h */,
+				40C5A38717B2667400EA140A /* CKTaskViewController.m */,
+				40C5A38817B2667400EA140A /* CKTaskViewController.xib */,
+				40C5A39C17B57C2F00EA140A /* CKTaskInformViewController.h */,
+				40C5A39D17B57C3000EA140A /* CKTaskInformViewController.m */,
+				40C5A39E17B57C3000EA140A /* CKTaskInformViewController.xib */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -524,9 +505,6 @@
 				40C5A30717AD237100EA140A /* CKInboxPlayViewController.h */,
 				40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */,
 				40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */,
-				40C5A33317AE64CD00EA140A /* CKInboxActionBar.h */,
-				40C5A33417AE64CE00EA140A /* CKInboxActionBar.m */,
-				40C5A33517AE64CE00EA140A /* CKInboxActionBar.xib */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -565,6 +543,16 @@
 			children = (
 				4057586317A9995500735F69 /* Inbox */,
 				40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */,
+				40C5A38B17B279AD00EA140A /* CKTask.h */,
+				40C5A38C17B279AD00EA140A /* CKTask.m */,
+				40C5A3BE17B65D7500EA140A /* CKTaskAction.h */,
+				40C5A3BF17B65D7500EA140A /* CKTaskAction.m */,
+				40612D3017BA474A00736B1F /* CKList.h */,
+				40612D3117BA474A00736B1F /* CKList.m */,
+				40612D3417BA662200736B1F /* CKUser.h */,
+				40612D3517BA662200736B1F /* CKUser.m */,
+				40612D3817BA71F600736B1F /* CKListAssignment.h */,
+				40612D3917BA71F600736B1F /* CKListAssignment.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -606,6 +594,66 @@
 				40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */,
 			);
 			name = Inbox;
+			sourceTree = "<group>";
+		};
+		40C5A34D17B11EED00EA140A /* RNGridMenu */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A34E17B11F1000EA140A /* RNGridMenu.m */,
+				40C5A34F17B11F1000EA140A /* RNGridMenu.h */,
+			);
+			name = RNGridMenu;
+			sourceTree = "<group>";
+		};
+		40C5A38E17B51D2A00EA140A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A39A17B5659E00EA140A /* timer-success.caf */,
+				40C5A38F17B51D3D00EA140A /* timer-buzzer.caf */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		40C5A3A517B6513E00EA140A /* THContactPicker */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A3A617B6516A00EA140A /* THBubbleColor.h */,
+				40C5A3A717B6516A00EA140A /* THBubbleColor.m */,
+				40C5A3A817B6516A00EA140A /* THContactBubble.h */,
+				40C5A3A917B6516A00EA140A /* THContactBubble.m */,
+				40C5A3AA17B6516A00EA140A /* THContactPickerView.h */,
+				40C5A3AB17B6516A00EA140A /* THContactPickerView.m */,
+			);
+			name = THContactPicker;
+			sourceTree = "<group>";
+		};
+		40C5A3C217B6C16200EA140A /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A3C317B6C17200EA140A /* TableCells */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		40C5A3C317B6C17200EA140A /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A3C417B6C1AC00EA140A /* TaskDetails */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		40C5A3C417B6C1AC00EA140A /* TaskDetails */ = {
+			isa = PBXGroup;
+			children = (
+				40C5A41A17B7BB6700EA140A /* CKTaskNameCell.h */,
+				40C5A41B17B7BB6700EA140A /* CKTaskNameCell.m */,
+				40C5A3C517B6C1CF00EA140A /* CKTaskNameCell.xib */,
+				40C5A49717B9263300EA140A /* CKTaskOwnerCell.h */,
+				40C5A49817B9263300EA140A /* CKTaskOwnerCell.m */,
+				40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */,
+			);
+			name = TaskDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,6 +704,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Jeffry Gorder";
+				TargetAttributes = {
+					405756DB17A3177D00735F69 = {
+						DevelopmentTeam = RVX68E9PDZ;
+					};
+				};
 			};
 			buildConfigurationList = 405756D717A3177D00735F69 /* Build configuration list for PBXProject "Coordel iPhone" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -724,48 +777,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405756F217A3177D00735F69 /* Default.png in Resources */,
-				405756F417A3177D00735F69 /* Default@2x.png in Resources */,
-				405756F617A3177D00735F69 /* Default-568h@2x.png in Resources */,
-				405757C417A478BA00735F69 /* inbox-icon-red.png in Resources */,
-				405757C517A478BA00735F69 /* inbox-icon-red@2x.png in Resources */,
-				405757C617A478BA00735F69 /* inbox-icon.png in Resources */,
-				405757C717A478BA00735F69 /* inbox-icon@2x.png in Resources */,
-				405757C817A478BA00735F69 /* lists-icon-green.png in Resources */,
-				405757C917A478BA00735F69 /* lists-icon-green@2x.png in Resources */,
-				405757CA17A478BA00735F69 /* lists-icon.png in Resources */,
-				405757CB17A478BA00735F69 /* lists-icon@2x.png in Resources */,
-				405757CC17A478BA00735F69 /* reveal-icon.png in Resources */,
-				405757CD17A478BA00735F69 /* reveal-icon@2x.png in Resources */,
-				405757CE17A478BA00735F69 /* settings-icon-black.png in Resources */,
-				405757CF17A478BA00735F69 /* settings-icon-black@2x.png in Resources */,
-				405757D017A478BA00735F69 /* tasks-icon-blue.png in Resources */,
-				405757D117A478BA00735F69 /* tasks-icon-blue@2x.png in Resources */,
-				405757D217A478BA00735F69 /* tasks-icon.png in Resources */,
-				405757D317A478BA00735F69 /* tasks-icon@2x.png in Resources */,
 				4057580317A5058A00735F69 /* InfoPlist.strings in Resources */,
 				4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */,
-				4057581217A6E9E300735F69 /* play.png in Resources */,
-				4057581417A6EA3300735F69 /* play@2x.png in Resources */,
-				4057581917A722BF00735F69 /* inbox-level-1.png in Resources */,
-				4057581B17A73A0900735F69 /* inbox-level-1@2x.png in Resources */,
-				4057585817A7FB4900735F69 /* graph-placeholder@2x.png in Resources */,
-				4057585917A7FB4900735F69 /* graph-placeholder.png in Resources */,
 				4057587217A9BFC700735F69 /* CKWelcomeViewController.xib in Resources */,
+				40351C8817BBA90700CDADA5 /* CKListViewController.xib in Resources */,
 				4057588517A9DD8E00735F69 /* CKWelcomeChildViewController.xib in Resources */,
-				4057588817AA6D4600735F69 /* coordel-logo@2x.png in Resources */,
-				4057589F17AABA3B00735F69 /* coordel-logo.png in Resources */,
-				405758A117AABE7100735F69 /* fields-login.png in Resources */,
-				405758AC17ABB7DA00735F69 /* button-signup-down.png in Resources */,
-				405758AD17ABB7DA00735F69 /* button-signup.png in Resources */,
 				40C5A30B17AD237100EA140A /* CKInboxPlayViewController.xib in Resources */,
-				40C5A33717AE64CF00EA140A /* CKInboxActionBar.xib in Resources */,
-				40C5A33A17AFB1D100EA140A /* deadline-calendar@2x.png in Resources */,
-				40C5A33B17AFB1D100EA140A /* deadline-calendar.png in Resources */,
-				40C5A34117AFDF5A00EA140A /* action@2x.png in Resources */,
-				40C5A34217AFDF5A00EA140A /* action.png in Resources */,
-				40C5A34517AFE08C00EA140A /* skip@2x.png in Resources */,
-				40C5A34617AFE08C00EA140A /* skip.png in Resources */,
+				40612D2F17BA38E200736B1F /* Media.xcassets in Resources */,
+				40C5A38A17B2667400EA140A /* CKTaskViewController.xib in Resources */,
+				40C5A39017B51D3D00EA140A /* timer-buzzer.caf in Resources */,
+				40C5A39B17B5659E00EA140A /* timer-success.caf in Resources */,
+				40C5A3A017B57C3100EA140A /* CKTaskInformViewController.xib in Resources */,
+				40C5A3C617B6C1CF00EA140A /* CKTaskNameCell.xib in Resources */,
+				40C5A49C17B9265000EA140A /* CKTaskOwnerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +798,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4057570E17A3177D00735F69 /* InfoPlist.strings in Resources */,
+				40C5A3C717B6C1CF00EA140A /* CKTaskNameCell.xib in Resources */,
+				40351C8917BBA90700CDADA5 /* CKListViewController.xib in Resources */,
+				40C5A49D17B9265000EA140A /* CKTaskOwnerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,11 +832,12 @@
 				4057572217A3E91C00735F69 /* SWRevealViewController.m in Sources */,
 				4057574017A3F26F00735F69 /* CKRevealViewController.m in Sources */,
 				405757DE17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */,
-				405757F217A480A400735F69 /* CKListsViewController.m in Sources */,
-				405757F617A480C300735F69 /* CKTasksViewController.m in Sources */,
+				405757F217A480A400735F69 /* CKListsSegmentViewController.m in Sources */,
+				405757F617A480C300735F69 /* CKTasksSegmentViewController.m in Sources */,
 				405757FA17A480DC00735F69 /* CKInboxViewController.m in Sources */,
 				405757FE17A480F700735F69 /* CKSettingsViewController.m in Sources */,
 				4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */,
+				40612D3217BA474A00736B1F /* CKList.m in Sources */,
 				4057580917A50A3A00735F69 /* Constants.m in Sources */,
 				4057586117A98E1500735F69 /* CKEmailAccount.m in Sources */,
 				4057587117A9BFC700735F69 /* CKWelcomeViewController.m in Sources */,
@@ -821,8 +849,20 @@
 				40C5A30A17AD237100EA140A /* CKInboxPlayViewController.m in Sources */,
 				40C5A31417AD5A6800EA140A /* InboxData.xcdatamodeld in Sources */,
 				40C5A32817ADDB1600EA140A /* CKInboxMessageView.m in Sources */,
-				40C5A33617AE64CF00EA140A /* CKInboxActionBar.m in Sources */,
+				40612D3617BA662200736B1F /* CKUser.m in Sources */,
 				40C5A33E17AFC60400EA140A /* CKUtility.m in Sources */,
+				40C5A35017B11F1000EA140A /* RNGridMenu.m in Sources */,
+				40612D3A17BA71F600736B1F /* CKListAssignment.m in Sources */,
+				40C5A38917B2667400EA140A /* CKTaskViewController.m in Sources */,
+				40C5A38D17B279AD00EA140A /* CKTask.m in Sources */,
+				40C5A39F17B57C3100EA140A /* CKTaskInformViewController.m in Sources */,
+				40C5A3AC17B6516A00EA140A /* THBubbleColor.m in Sources */,
+				40C5A3AE17B6516A00EA140A /* THContactBubble.m in Sources */,
+				40C5A3B017B6516A00EA140A /* THContactPickerView.m in Sources */,
+				40C5A3C017B65D7500EA140A /* CKTaskAction.m in Sources */,
+				40C5A41C17B7BB6700EA140A /* CKTaskNameCell.m in Sources */,
+				40351C8617BBA90700CDADA5 /* CKListViewController.m in Sources */,
+				40C5A49917B9263400EA140A /* CKTaskOwnerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,16 +870,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40612D3B17BA71F600736B1F /* CKListAssignment.m in Sources */,
 				4057571117A3177D00735F69 /* CoordelTests.m in Sources */,
 				4057572317A3E91C00735F69 /* SWRevealViewController.m in Sources */,
 				4057574117A3F26F00735F69 /* CKRevealViewController.m in Sources */,
 				405757DF17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */,
-				405757F317A480A400735F69 /* CKListsViewController.m in Sources */,
-				405757F717A480C300735F69 /* CKTasksViewController.m in Sources */,
+				405757F317A480A400735F69 /* CKListsSegmentViewController.m in Sources */,
+				405757F717A480C300735F69 /* CKTasksSegmentViewController.m in Sources */,
 				405757FB17A480DC00735F69 /* CKInboxViewController.m in Sources */,
+				40612D3317BA474A00736B1F /* CKList.m in Sources */,
 				405757FF17A480F700735F69 /* CKSettingsViewController.m in Sources */,
+				40612D3717BA662200736B1F /* CKUser.m in Sources */,
 				4057586217A98E1500735F69 /* CKEmailAccount.m in Sources */,
 				4017239917ABE20800F97442 /* CKInbox.m in Sources */,
+				40C5A35117B11F1000EA140A /* RNGridMenu.m in Sources */,
+				40C5A3AD17B6516A00EA140A /* THBubbleColor.m in Sources */,
+				40C5A3AF17B6516A00EA140A /* THContactBubble.m in Sources */,
+				40C5A3B117B6516A00EA140A /* THContactPickerView.m in Sources */,
+				40C5A3C117B65D7500EA140A /* CKTaskAction.m in Sources */,
+				40C5A41D17B7BB6700EA140A /* CKTaskNameCell.m in Sources */,
+				40351C8717BBA90700CDADA5 /* CKListViewController.m in Sources */,
+				40C5A49A17B9263400EA140A /* CKTaskOwnerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +989,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -945,6 +998,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coordel/Coordel iPhone-Prefix.pch";
 				INFOPLIST_FILE = "Coordel/Coordel iPhone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lctemplate-ios",
 					"-letpan-ios",
@@ -962,6 +1016,7 @@
 					"$(BUILT_PRODUCTS_DIR)/libMailCore-ios.a",
 				);
 				PRODUCT_NAME = "Coordel iPhone";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -970,6 +1025,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -977,6 +1034,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coordel/Coordel iPhone-Prefix.pch";
 				INFOPLIST_FILE = "Coordel/Coordel iPhone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-lctemplate-ios",
 					"-letpan-ios",
@@ -994,6 +1052,7 @@
 					"$(BUILT_PRODUCTS_DIR)/libMailCore-ios.a",
 				);
 				PRODUCT_NAME = "Coordel iPhone";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

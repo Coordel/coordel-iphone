@@ -60,7 +60,6 @@
     NSLog(@"segmentedIndex baseSegmentedController %d", self.segmentIndex);
 	segmentedControl.selectedSegmentIndex = self.segmentIndex;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	segmentedControl.frame = CGRectMake(0, 0, 150, 30);
 	[segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
 	
@@ -114,7 +113,7 @@
         
         
     } else if (index == 1){
-        CKTasksViewController *tasksController = [[CKTasksViewController alloc] init];
+        CKTasksSegmentViewController *tasksController = [[CKTasksSegmentViewController alloc] init];
         tasksController.segmentIndex=1;
         //[self.navigationController pushViewController:tasksController animated:NO];
         [self.navigationController setViewControllers: [NSArray arrayWithObject: tasksController]

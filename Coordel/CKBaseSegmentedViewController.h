@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CKBaseSegmentedViewController : UITableViewController
+@interface CKBaseSegmentedViewController : PFQueryTableViewController
 
 @property int segmentIndex;
 

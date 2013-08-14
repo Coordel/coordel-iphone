@@ -84,6 +84,7 @@
 
 - (NSArray *)fetchNextInboxMessages: (int)count
 {
+    NSDate *sliderDate = [self fetchInboxSliderDate];
     //NSLog(@"inboxSliderDate %@", [self fetchInboxSliderDate]);
     
     NSManagedObjectContext *moc = [(AppDelegate*)[[UIApplication sharedApplication] delegate]managedObjectContext];
@@ -93,13 +94,14 @@
     
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:kCKInboxDataMessagesEntityReceivedDateKey ascending:YES];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(receivedDate >= %@)", [self fetchInboxSliderDate]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(receivedDate >= %@)", sliderDate];
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     [request setSortDescriptors:@[sortDescriptor]];
-    [request setFetchLimit:count];
     [request setPredicate:predicate];
+    [request setFetchLimit:count];
+
     
     
     NSError *error;
@@ -108,6 +110,7 @@
     {
         // Deal with error...
         NSLog(@"error getting filtered array");
+    
     }
     
     /*
@@ -122,9 +125,15 @@
     NSNumber *uid = [[records objectAtIndex:0] valueForKey:kCKInboxDataMessagesEntityUIDKey];
     
     NSDictionary *record = [[NSDictionary alloc] initWithObjectsAndKeys:messageID, kCKInboxDataMessagesEntityMessageIDKey, receivedDate, kCKInboxDataMessagesEntityReceivedDateKey, username, kCKInboxDataMessagesEntityUsernameKey, type, kCKInboxDataMessagesEntityTypeKey, uid, kCKInboxDataMessagesEntityUIDKey, nil];
+       */
     
-    
-    NSLog(@"Records %@", record);
+    //NSLog(@"Records %@", records);
+    /*
+    NSInteger recordIndex = 0;
+    for (NSManagedObject *r in records){
+        NSLog(@"received date %d %@ %@", recordIndex, [r valueForKey:@"receivedDate"], [r valueForKey:@"uid"]);
+        recordIndex += 1;
+    }
      */
     return records;
 }

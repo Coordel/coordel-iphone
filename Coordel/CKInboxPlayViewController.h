@@ -6,18 +6,21 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
-#include <MailCore/MailCore.h>
+#import <MailCore/MailCore.h>
+#import "RNGridMenu.h"
 
 
-@interface CKInboxPlayViewController : UIViewController
+@interface CKInboxPlayViewController : UIViewController <RNGridMenuDelegate>
 
 - (IBAction)cancelPlay:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UIView *messageContainer;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
-- (IBAction)skip:(id)sender;
+- (IBAction)showActions:(id)sender;
 
+- (IBAction)skipMessage:(id)sender;
 
 @end

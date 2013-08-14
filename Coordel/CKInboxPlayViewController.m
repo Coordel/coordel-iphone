@@ -10,21 +10,27 @@
 
 #import "CKInbox.h"
 #import "CKInboxPlayViewController.h"
-#import <CoreGraphics/CoreGraphics.h>
-#import <ImageIO/ImageIO.h>
+
 #import "CKInboxMessageView.h"
 #import <MailCore/MailCore.h>
-#import "CKInboxActionBar.h"
+#import "RNGridMenu.h"
+#import "CKTaskViewController.h"
+#import "CKTaskAction.h"
+
 
 
 @interface CKInboxPlayViewController () //<MCOMessageViewDelegate>
 
 @property CKInboxMessageView *messageView;
 @property CKInbox *inbox;
-@property CKInboxActionBar *actions;
+
 
 @property AppDelegate *app;
 @property int playBatchSize;
+
+@property MCOMessageParser *msg;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -44,6 +50,24 @@
     [super viewDidLoad];
     _app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     _inbox = [_app inbox];
+  
+
+    //[self.navigationItem setHidesBackButton:YES];
+    
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelPlay:)];
+    [self.navigationItem setLeftBarButtonItem:leftBarButton];
+    
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"deadline-calendar.png"] landscapeImagePhone:[UIImage imageNamed:@"deadline-calendar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showCalendar:)];
+    [self.navigationItem setRightBarButtonItems:@[rightBarButton] animated:YES];
+    
+    [self setNavigationBarTitle];
+    /*
+    NSString *barTitle =[NSString stringWithFormat:@"Message %d of %d", _app.inboxPlayCount + 1, _app.inboxPlayBatchSize];
+    
+    
+    [self.navigationItem setTitle:barTitle];
+
+     */
     
         // Do any additional setup after loading the view from its nib.
     _messageView = [[CKInboxMessageView alloc] initWithFrame:_messageContainer.bounds];
@@ -55,6 +79,12 @@
     
     //[self showActionBar];
 
+}
+
+- (void) setNavigationBarTitle{
+    NSString *barTitle =[NSString stringWithFormat:@"E-mail %d of %d", _app.inboxPlayCount, _app.inboxPlayBatchSize];
+    
+    [self.navigationItem setTitle:barTitle];
 }
 
 
@@ -77,38 +107,113 @@
             
             NSAssert(data != nil, @"data != nil");
             
-            MCOMessageParser * msg = [MCOMessageParser messageParserWithData:data];
+            _msg = [MCOMessageParser messageParserWithData:data];
             
-            NSLog(@"message %@", msg);
-            _messageView.message = msg;
+            NSLog(@"message %@", _msg);
+            _messageView.message = _msg;
             [_messageView refresh];
             
+            
         }];
+        [self setNavigationBarTitle];
     } else {
         NSLog(@"we're done");
     }
     
 }
 
-/*
-- (void) showActionBar
-{
-    // To get the vertical location we start at the top of the tab bar (0), go up by the height of the notification view, then go up another 2 pixels so our view is slightly above the tab bar
-     _actions = [[CKInboxActionBar alloc]init];
-    
-    UIView *bar = [[UIView alloc]initWithFrame:CGRectMake(0, - _actions.view.frame.size.height, self.view.frame.size.width, _actions.view.frame.size.height)];
-    
-    [bar addSubview:_actions.view];
-
-    self.toolBar.contentMode = UIViewContentModeRedraw;
-    
-    if (!bar.superview)
-        [self.toolBar addSubview:bar];
-    
-    
-   
+- (void)showList {
+    NSInteger numberOfOptions = 6;
+    NSArray *options = @[
+                         @"Do now",
+                         @"Defer",
+                         @"Delegate",
+                         @"Attach",
+                         @"Archive",
+                         @"Delete"                         ];
+    RNGridMenu *av = [[RNGridMenu alloc] initWithTitles:[options subarrayWithRange:NSMakeRange(0, numberOfOptions)]];
+    av.delegate = self;
+    av.highlightColor = kCKColorInbox;
+    //    av.itemTextAlignment = NSTextAlignmentLeft;
+    av.itemFont = [UIFont boldSystemFontOfSize:18];
+    av.itemSize = CGSizeMake(150, 55);
+    [av showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)];
 }
- */
+
+- (void)showGrid {
+    NSInteger numberOfOptions = 6;
+    NSArray *items = @[
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"do-it-menu"] title:@"Do Now"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"defer-menu"] title:@"Defer"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"delegate-menu"] title:@"Delegate"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"attach-menu"] title:@"Attach"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"archive-menu"] title:@"Archive"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"delete-menu"] title:@"Delete"]
+                       ];
+    
+    RNGridMenu *av = [[RNGridMenu alloc] initWithItems:[items subarrayWithRange:NSMakeRange(0, numberOfOptions)]];
+    av.delegate = self;
+    av.highlightColor = kCKColorInbox;
+    //    av.bounces = NO;
+    [av showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)];
+}
+
+- (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex {
+    NSLog(@"Dismissed with item %d: %@", itemIndex, item.title);
+    [self doAction:itemIndex];
+}
+
+- (NSInteger)actionTypeFromIndex:(NSInteger)index
+{
+    NSInteger type;
+    
+    switch (index) {
+        case 0:
+            type = CKTaskActionTypeDoNow;
+            break;
+            
+        case 1:
+            type = CKTaskActionTypeDefer;
+            break;
+            
+        case 2:
+            type = CKTaskActionTypeDelegate;
+            break;
+        case 3:
+            type = CKTaskActionTypeAttachEmail;
+            break;
+        case 4:
+            type = CKTaskActionTypeArchive;
+            break;
+        case 5:
+            type = CKTaskActionTypeDelete;
+            break;
+
+    }
+
+    return type;
+}
+
+- (void)doAction: (NSInteger)actionIndex {
+    
+    NSLog(@"sender %@", _msg.header);
+    
+        
+    CKTaskAction *act = [[CKTaskAction alloc]initWithEmail:_msg forAction:[self actionTypeFromIndex:actionIndex]];
+    CKTaskViewController *taskView = [[CKTaskViewController alloc] initWithAction:act];
+    
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @"E-mail"
+                                   style: UIBarButtonItemStyleBordered
+                                   target: nil action: nil];
+    
+    [self.navigationItem setBackBarButtonItem: backButton];
+
+    [self.navigationController pushViewController:taskView animated:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -119,10 +224,16 @@
 - (IBAction)cancelPlay:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)skip:(id)sender {
-    
-    [self showNextMessage];
-    
+
+- (IBAction)showCalendar:(id)sender {
+  
 }
 
+- (IBAction)showActions:(id)sender {
+    [self showGrid];
+}
+
+- (IBAction)skipMessage:(id)sender {
+    [self showNextMessage];
+}
 @end
