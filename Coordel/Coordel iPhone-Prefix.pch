@@ -15,4 +15,6 @@
     #import <Parse/Parse.h>
     #import "LocalizedConstants.m"
     #import "Constants.h"
+    #import "CKUtility.h"
+
 #endif

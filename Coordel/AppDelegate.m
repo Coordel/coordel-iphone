@@ -41,8 +41,7 @@
 @property (nonatomic, strong) CKInboxPlayViewController *inboxPlayViewController;
 
 
-//properties for inbox batch play
-@property NSArray *inboxPlayBatch;
+
 
 @end
 
@@ -102,6 +101,7 @@
     //load the inbox
     [self initializeModel];
     [self initializeRevealController];
+    [self initializeSounds];
    
     _accessViewController = [[CKAccessViewController alloc] init];
     
@@ -177,6 +177,22 @@
 
     //[_inbox loadHeaders];
         
+}
+
+- (void)initializeSounds {
+    NSString *soundPath =[[NSBundle mainBundle] pathForResource:@"timer-buzzer" ofType:@"caf"];
+    
+    NSString *onTimePath =[[NSBundle mainBundle] pathForResource:@"timer-success" ofType:@"caf"];
+    NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+    NSURL *successURL = [NSURL fileURLWithPath:onTimePath];
+    
+    
+    NSError *error = nil;
+    _failSound = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+    [_failSound prepareToPlay];
+    _successSound = [[AVAudioPlayer alloc] initWithContentsOfURL:successURL error:&error];
+    [_successSound prepareToPlay];
+    
 }
 
 - (void)presentWelcomeViewController
@@ -268,7 +284,6 @@
 {
     _inboxPlayCount = 0;
     //log that play started
-    
         
     //fetch a batch from the inbox
     _inboxPlayBatch = [_inbox fetchNextInboxMessages:_inboxPlayBatchSize];
@@ -287,6 +302,7 @@
     //log that the user cancelled play
     //subtract points
     _inboxPlayBatch = nil;
+   
     
 }
 
@@ -296,6 +312,7 @@
     //log that the user completed a batch
     //increase points
     _inboxPlayBatch = nil;
+   
     
 }
 

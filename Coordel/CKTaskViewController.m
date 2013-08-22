@@ -9,23 +9,13 @@
 #import "CKTaskViewController.h"
 #import "CKTask.h"
 #import "CKTaskAction.h"
-#import <AVFoundation/AVAudioPlayer.h>
-#import "CKTaskNameCell.h"
+#import "CKEditNameCell.h"
+#import "CKEditPurposeCell.h"
+#import "CKTaskInformViewController.h"
 
+static NSString *kNameCell = @"nameCell";
+static NSString *kPurposeCell = @"purposeCell";
 
-@interface CKTaskViewController ()
-
-@property NSTimer *theTimer;
-@property NSDateComponents *components;
-@property NSDate *targetDate;
-@property NSCalendar *cal;
-@property NSInteger counter;
-@property (nonatomic, strong) AVAudioPlayer *buzzer;
-@property (nonatomic, strong) AVAudioPlayer *onTime;
-@property BOOL beatTimer;
-@property BOOL timerExpired;
-
-@end
 
 @implementation CKTaskViewController
 
@@ -54,46 +44,30 @@
     [super viewDidLoad];
     
     
-    //put the cells here for testing purposes
-    [self.tableView registerNib:[UINib nibWithNibName:@"CKTaskNameCell"
-                                                   bundle:[NSBundle mainBundle]]
-             forCellReuseIdentifier:@"TaskNameCellReuseID"];
+    [self.tableView registerClass:[CKEditNameCell class] forCellReuseIdentifier:kNameCell];
+    
+    [self.tableView registerClass:[CKEditPurposeCell class] forCellReuseIdentifier:kPurposeCell];
 
     
-    [self.tableView setDataSource:_action];
+    [self.tableView setDataSource:self];
   
-    if (_action.actionType == CKTaskActionTypeDoNow){
-        [self showTimer:YES];
-    } else {
-        [self.navigationItem setTitle:_action.navigationTitle];
-    }
-    
-    
+
+    [self.navigationItem setTitle:_action.actionTemplate.actionTitle];
+   
     [self.navigationController setToolbarHidden:NO];
-    [self.navigationController.toolbar setTintColor:kCKColorLightGray];
     
-    UIBarButtonItem *informBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"next.png"] landscapeImagePhone:[UIImage imageNamed:@"next.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(inform)];
+    UIBarButtonItem *tell = [[UIBarButtonItem alloc]initWithTitle:kLocalizedTell style:UIBarButtonItemStyleBordered target:self action:@selector(tell)];
     
-    [informBarButton setTintColor:kCKColorInbox];
+    self.navigationItem.rightBarButtonItem = tell;
     
-    UIBarButtonItem *interruptBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Interrupt" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *interruptBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"quick"] landscapeImagePhone:[UIImage imageNamed:@"quick"] style:UIBarButtonItemStyleBordered target:nil action:nil];
+    
     [interruptBarButton setTintColor:kCKColorInbox];
     
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-   
-    [self setToolbarItems:@[interruptBarButton,space, informBarButton] animated:YES];
     
-    NSString *soundPath =[[NSBundle mainBundle] pathForResource:@"timer-buzzer" ofType:@"caf"];
+    [self setToolbarItems:@[interruptBarButton,space] animated:YES];
     
-    NSString *onTimePath =[[NSBundle mainBundle] pathForResource:@"timer-success" ofType:@"caf"];
-    NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
-    NSURL *successURL = [NSURL fileURLWithPath:onTimePath];
-
-    
-    NSError *error = nil;
-    _buzzer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-    _onTime = [[AVAudioPlayer alloc] initWithContentsOfURL:successURL error:&error];
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -107,10 +81,148 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0)
+    {
+        return 0.0;
+    }
+    return UITableViewAutomaticDimension;
 
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+ 
+    if (indexPath.section == 0 && indexPath.row == 1){
+        /*
+        CGSize size = [_action.task.purpose sizeWithFont:[UIFont fontWithName:@"Helvetica" size:14] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeWordWrap];
+        
+        */
+        
+        NSAttributedString *purpose = [[NSAttributedString alloc]initWithString:_action.task.purpose];
+        
+        CGRect rect =  [purpose boundingRectWithSize:CGSizeMake(280.0f, CGFLOAT_MAX)
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                     context:nil];
+        
+        return rect.size.height + 20;
+    
+    }
+    
+    return UITableViewAutomaticDimension;
+
+}
+
+
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    // Return the number of sections.
+    return 7;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    int count = 1;
+    if (section == 0){
+        count = 2;
+    } else if (section == 1){
+        count = 3;
+    }
+    return count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    static NSString *kOtherCell = @"otherCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kOtherCell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kOtherCell];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+    }
+    
+    
+    
+    if (indexPath.section == 0){
+        //name and purpose cells
+        
+        if (indexPath.row == 0){
+            CKEditNameCell *nameCell = [tableView dequeueReusableCellWithIdentifier:kNameCell];
+            
+            nameCell.textField.text = _action.task.name;
+            return nameCell;
+
+        } else if (indexPath.row == 1){
+            CKEditPurposeCell *purposeCell = [tableView dequeueReusableCellWithIdentifier:kPurposeCell];
+            
+            purposeCell.textView.text = _action.task.purpose;
+            [purposeCell.textView sizeThatFits:purposeCell.textView.bounds.size];
+    
+            return purposeCell;
+
+        }
+        
+    } else if (indexPath.section == 1){
+        //schedule
+        if (indexPath.row == 0){
+            //starts
+            cell.textLabel.text = kLocalizedStarts;
+            cell.detailTextLabel.text = _action.task.startsView;
+            //cell.imageView.image = [UIImage imageNamed:@"start"];
+            
+        } else if (indexPath.row == 1){
+            //deadline
+            cell.textLabel.text = kLocalizedDeadline;
+            cell.detailTextLabel.text = _action.task.deadlineView;
+            //cell.imageView.image = [UIImage imageNamed:@"deadline"];
+
+        } else if (indexPath.row == 2){
+            //timezone
+            cell.textLabel.text = kLocalizedTimezone;
+            cell.detailTextLabel.text = _action.task.timeZoneView;
+        }
+        
+    } else if (indexPath.section == 2) {
+        cell.textLabel.text = kLocalizedOwner;
+        cell.detailTextLabel.text = _action.task.ownerView;
+    } else {
+        if (indexPath.section ==3){
+            cell.textLabel.text = kLocalizedList;
+            cell.detailTextLabel.text =   @"Quick List";
+        } else if (indexPath.section == 4){
+            cell.textLabel.text = kLocalizedDeliverables;
+            cell.detailTextLabel.text = @"0";
+        } else if (indexPath.section == 5){
+            cell.textLabel.text = kLocalizedBlockers;
+            cell.detailTextLabel.text = @"0";
+        } else if (indexPath.section == 6){
+            cell.textLabel.text = kLocalizedSupportingDocuments;
+            cell.detailTextLabel.text = @"0";
+        }
+    }
+    
+    return cell;
+}
+
+- (void)tell {
+    
+    CKTaskInformViewController *taskInform = [[CKTaskInformViewController alloc] initWithAction:_action];
+    [self.navigationController pushViewController:taskInform animated:YES];
+    
+}
+
+
+
+
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -152,81 +264,8 @@ titleForHeaderInSection:(NSInteger)section
     return key;
 }
 
+
 */
-
-#pragma Timer
-
-- (void)tick {
-    if (_counter == 0) {
-        //Checks if the countdown completed
-        if (!_beatTimer){
-            _timerExpired = YES;
-            [self.navigationItem setTitle:@"00:00"];
-            [self.buzzer play];
-            [self reset];
-            
-        }
-        return;
-    }
-    
-    long seconds = lroundf(_counter); // Modulo (%) operator below needs int or long
-    
-    int min = seconds / 60;
-    int sec = seconds % 60;
-    
-    //make sure the seconds are padded correctly
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setPaddingCharacter:@"0"];
-    [numberFormatter setMinimumIntegerDigits:2];
-    
-    NSString *minOut = [numberFormatter stringFromNumber:[NSNumber numberWithInteger:min]];
-    
-    NSString *secOut = [numberFormatter stringFromNumber:[NSNumber numberWithInteger:sec]];
-    
-    NSString *output = [NSString stringWithFormat:@"%@:%@", minOut, secOut];
-    NSLog(@"output %@", output);
-    [self.navigationItem setTitle:output];
-    _counter -= 1;
-}
-
-- (void)showTimer:(BOOL)on {
-    
-    _beatTimer = NO;
-    _timerExpired = NO;
-    
-    [self.navigationItem setTitle:@"02:00"];
-    
-    if (!_counter) {
-        _counter = 3;
-    }
-    
-    
-    if (_counter > 0) {
-        _theTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    }
-    else {
-        _counter = 0;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot countdown because time is before now" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-
-- (void)reset {
-    [_theTimer invalidate];
-    _theTimer = nil;
-    _targetDate = nil;
-    
-    self.navigationController.title = @"";
-}
-
-- (void)inform {
-    if (!_timerExpired) {
-        _beatTimer = YES;
-        [self.onTime play];
-        [_theTimer invalidate];
-    }
-}
 
 /*
 // Override to support conditional editing of the table view.

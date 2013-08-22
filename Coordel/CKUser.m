@@ -11,6 +11,9 @@
 
 @implementation CKUser
 
+@dynamic defaultList;
+@dynamic fullName;
+
 + (CKUser *)currentUser {
     return (CKUser *)[PFUser currentUser];
 }

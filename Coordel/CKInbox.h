@@ -9,9 +9,11 @@
 #import "MailCore/MailCore.h"
 
 
+
 @interface CKInbox : NSObject
 
 @property (readonly) NSDate *inboxSliderDate;
+
 
 - (void)loadHeaders;
 - (NSArray *)fetchHeadersFromStartDate:(NSDate *)startDate;
@@ -20,5 +22,11 @@
 - (NSDate *)fetchInboxSliderDate;
 - (NSArray *)fetchNextInboxMessages: (int)count;
 - (MCOIMAPSession *)IMAPSessionForAccount:(NSString *)accountUsername;
+
+
+//messages
+- (void)sendMessage:(MCOMessageBuilder *)builder;
+- (void)archiveMessage:(NSInteger)uid toFolderName:(NSString *)folder;
+- (void)deleteMessage:(NSInteger)uid;
 
 @end

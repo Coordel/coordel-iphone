@@ -24,7 +24,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <items>
-                        <barButtonItem title="Interrupt" id="1234">
+                        <barButtonItem image="quick" id="ctQ-pz-GPx">
                             <color key="tintColor" red="1" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="126"/>
@@ -45,6 +45,9 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="127"/>
+                        <barButtonItem image="deadline-calendar" id="Kfg-w0-bsc">
+                            <color key="tintColor" red="1" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </items>
                     <color key="tintColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
@@ -98,7 +101,9 @@
         </view>
     </objects>
     <resources>
+        <image name="deadline-calendar" width="20" height="20"/>
         <image name="mail" width="20" height="20"/>
         <image name="play" width="15" height="20"/>
+        <image name="quick" width="20" height="20"/>
     </resources>
 </document>

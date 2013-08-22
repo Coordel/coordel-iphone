@@ -12,6 +12,7 @@
 NSString *const kCKUserDefaultsAfterFirstLaunch = @"afterFirstLaunch";
 NSString *const kCKUserDefaultsInboxSliderDate = @"inboxSliderDate";
 NSString *const kCKUserDefaultsInboxPlayBatchSize = @"inboxPlayBatchSize";
+NSString *const kCKUserDefaultsListDefaultDeadlineDayInterval = @"listDefaultDeadlineDayInterval";
 
 #pragma mark - Core Data Keys
 NSString *const kCKInboxDataMessagesEntity = @"Messages";

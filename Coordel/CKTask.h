@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
+#import "CKUser.h"
+#import "CKTask.h"
+#import "CKList.h"
+
 
 @interface CKTask : PFObject<PFSubclassing>
 
@@ -21,8 +25,14 @@
 //delegator is the person who created the task for someone else. could be the responsible of the list or could be another participant in the list
 @property (nonatomic) NSString *delegator;
 
+//starts defaults to now, but can be set to any time in the future
+@property (nonatomic) NSDate *starts;
+
 //deadline can be left out, but will always exist based on the deadline of the list
 @property (nonatomic) NSDate *deadline;
+
+//timezone defaults to the timezone of the list if in a discussion or to the user's timezone if in a personal list
+@property (nonatomic) NSString *timeZone;
 
 //the list this task is part of
 @property (nonatomic) NSString *list;
@@ -35,6 +45,12 @@
 
 
 + (NSString *)parseClassName;
++ (CKTask *)defaultObject;
+- (NSDate *)derivedDeadline;
+- (NSString *)startsView;
+- (NSString *)deadlineView;
+- (NSString *)timeZoneView;
+- (NSString *)ownerView;
 
 @end
 

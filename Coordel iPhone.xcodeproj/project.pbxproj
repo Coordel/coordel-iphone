@@ -10,10 +10,26 @@
 		4017239817ABE20800F97442 /* CKInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017239717ABE20800F97442 /* CKInbox.m */; };
 		4017239917ABE20800F97442 /* CKInbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017239717ABE20800F97442 /* CKInbox.m */; };
 		401723F317AC218500F97442 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401723F217AC218500F97442 /* CoreData.framework */; };
+		4018C5B417C01DA800C614B6 /* CKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4018C5B317C01DA800C614B6 /* CKUtility.m */; };
+		4018C5B517C01DA800C614B6 /* CKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4018C5B317C01DA800C614B6 /* CKUtility.m */; };
 		40351C8617BBA90700CDADA5 /* CKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40351C8417BBA90700CDADA5 /* CKListViewController.m */; };
 		40351C8717BBA90700CDADA5 /* CKListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40351C8417BBA90700CDADA5 /* CKListViewController.m */; };
 		40351C8817BBA90700CDADA5 /* CKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40351C8517BBA90700CDADA5 /* CKListViewController.xib */; };
 		40351C8917BBA90700CDADA5 /* CKListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40351C8517BBA90700CDADA5 /* CKListViewController.xib */; };
+		40351C8E17BBDF7400CDADA5 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40351C8D17BBDF7400CDADA5 /* SZTextView.m */; };
+		40351C8F17BBDF7400CDADA5 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40351C8D17BBDF7400CDADA5 /* SZTextView.m */; };
+		4035F1D417BFAF4800FF522B /* CKInboxDoNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4035F1D217BFAF4800FF522B /* CKInboxDoNowViewController.m */; };
+		4035F1D517BFAF4800FF522B /* CKInboxDoNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4035F1D217BFAF4800FF522B /* CKInboxDoNowViewController.m */; };
+		4035F1D617BFAF4800FF522B /* CKInboxDoNowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4035F1D317BFAF4800FF522B /* CKInboxDoNowViewController.xib */; };
+		4035F1D717BFAF4800FF522B /* CKInboxDoNowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4035F1D317BFAF4800FF522B /* CKInboxDoNowViewController.xib */; };
+		4035F1DA17BFB1DD00FF522B /* CKEditNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4035F1D917BFB1DD00FF522B /* CKEditNameCell.m */; };
+		4035F1DB17BFB1DD00FF522B /* CKEditNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4035F1D917BFB1DD00FF522B /* CKEditNameCell.m */; };
+		4035F1E617BFBFD700FF522B /* CKEditPurposeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4035F1E517BFBFD700FF522B /* CKEditPurposeCell.m */; };
+		4035F1E717BFBFD700FF522B /* CKEditPurposeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4035F1E517BFBFD700FF522B /* CKEditPurposeCell.m */; };
+		405458A317C3837E00DB65FB /* CKTellTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405458A217C3837E00DB65FB /* CKTellTemplate.m */; };
+		405458A417C3837E00DB65FB /* CKTellTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405458A217C3837E00DB65FB /* CKTellTemplate.m */; };
+		405458A717C385E400DB65FB /* CKTellDoNow.m in Sources */ = {isa = PBXBuildFile; fileRef = 405458A617C385E400DB65FB /* CKTellDoNow.m */; };
+		405458A817C385E400DB65FB /* CKTellDoNow.m in Sources */ = {isa = PBXBuildFile; fileRef = 405458A617C385E400DB65FB /* CKTellDoNow.m */; };
 		405756E017A3177D00735F69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756DF17A3177D00735F69 /* UIKit.framework */; };
 		405756E217A3177D00735F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E117A3177D00735F69 /* Foundation.framework */; };
 		405756E417A3177D00735F69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405756E317A3177D00735F69 /* CoreGraphics.framework */; };
@@ -38,8 +54,6 @@
 		4057573817A3EBAF00735F69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4057573717A3EBAF00735F69 /* SystemConfiguration.framework */; };
 		4057574017A3F26F00735F69 /* CKRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057573F17A3F26F00735F69 /* CKRevealViewController.m */; };
 		4057574117A3F26F00735F69 /* CKRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4057573F17A3F26F00735F69 /* CKRevealViewController.m */; };
-		405757DE17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */; };
-		405757DF17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */; };
 		405757F217A480A400735F69 /* CKListsSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F117A480A400735F69 /* CKListsSegmentViewController.m */; };
 		405757F317A480A400735F69 /* CKListsSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F117A480A400735F69 /* CKListsSegmentViewController.m */; };
 		405757F617A480C300735F69 /* CKTasksSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405757F517A480C300735F69 /* CKTasksSegmentViewController.m */; };
@@ -69,11 +83,12 @@
 		40612D3717BA662200736B1F /* CKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3517BA662200736B1F /* CKUser.m */; };
 		40612D3A17BA71F600736B1F /* CKListAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3917BA71F600736B1F /* CKListAssignment.m */; };
 		40612D3B17BA71F600736B1F /* CKListAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40612D3917BA71F600736B1F /* CKListAssignment.m */; };
+		40A6B52D17C61A7200EF052F /* CKListPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A6B52C17C61A7200EF052F /* CKListPickerViewController.m */; };
+		40A6B52E17C61A7200EF052F /* CKListPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A6B52C17C61A7200EF052F /* CKListPickerViewController.m */; };
 		40C5A30A17AD237100EA140A /* CKInboxPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */; };
 		40C5A30B17AD237100EA140A /* CKInboxPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */; };
 		40C5A31417AD5A6800EA140A /* InboxData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */; };
 		40C5A32817ADDB1600EA140A /* CKInboxMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */; };
-		40C5A33E17AFC60400EA140A /* CKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A33D17AFC60400EA140A /* CKUtility.m */; };
 		40C5A35017B11F1000EA140A /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A34E17B11F1000EA140A /* RNGridMenu.m */; };
 		40C5A35117B11F1000EA140A /* RNGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A34E17B11F1000EA140A /* RNGridMenu.m */; };
 		40C5A35317B11F8200EA140A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C5A35217B11F8100EA140A /* Accelerate.framework */; };
@@ -104,6 +119,20 @@
 		40C5A49A17B9263400EA140A /* CKTaskOwnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5A49817B9263300EA140A /* CKTaskOwnerCell.m */; };
 		40C5A49C17B9265000EA140A /* CKTaskOwnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */; };
 		40C5A49D17B9265000EA140A /* CKTaskOwnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */; };
+		40FE0A8A17C4D2FF00D0ABF1 /* CKTaskActionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A8917C4D2FF00D0ABF1 /* CKTaskActionTemplate.m */; };
+		40FE0A8B17C4D2FF00D0ABF1 /* CKTaskActionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A8917C4D2FF00D0ABF1 /* CKTaskActionTemplate.m */; };
+		40FE0A8E17C4D90B00D0ABF1 /* CKTaskActionDoNow.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A8D17C4D90B00D0ABF1 /* CKTaskActionDoNow.m */; };
+		40FE0A8F17C4D90B00D0ABF1 /* CKTaskActionDoNow.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A8D17C4D90B00D0ABF1 /* CKTaskActionDoNow.m */; };
+		40FE0A9C17C4DB4D00D0ABF1 /* CKTellArchiveEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A9917C4DB4D00D0ABF1 /* CKTellArchiveEmail.m */; };
+		40FE0A9D17C4DB4D00D0ABF1 /* CKTellArchiveEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A9917C4DB4D00D0ABF1 /* CKTellArchiveEmail.m */; };
+		40FE0A9E17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A9B17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m */; };
+		40FE0A9F17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0A9B17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m */; };
+		40FE0AA217C4DB8000D0ABF1 /* CKTaskActionDefer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0AA117C4DB8000D0ABF1 /* CKTaskActionDefer.m */; };
+		40FE0AA317C4DB8000D0ABF1 /* CKTaskActionDefer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0AA117C4DB8000D0ABF1 /* CKTaskActionDefer.m */; };
+		40FE0AA617C4DB9100D0ABF1 /* CKTaskActionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0AA517C4DB9100D0ABF1 /* CKTaskActionDelegate.m */; };
+		40FE0AA717C4DB9100D0ABF1 /* CKTaskActionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0AA517C4DB9100D0ABF1 /* CKTaskActionDelegate.m */; };
+		40FE0AAA17C4F39F00D0ABF1 /* CKTellDeferTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0AA917C4F39F00D0ABF1 /* CKTellDeferTask.m */; };
+		40FE0AAB17C4F39F00D0ABF1 /* CKTellDeferTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FE0AA917C4F39F00D0ABF1 /* CKTellDeferTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,9 +191,23 @@
 		4017239617ABE20800F97442 /* CKInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInbox.h; sourceTree = "<group>"; };
 		4017239717ABE20800F97442 /* CKInbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInbox.m; sourceTree = "<group>"; };
 		401723F217AC218500F97442 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4018C5B217C01DA800C614B6 /* CKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUtility.h; sourceTree = "<group>"; };
+		4018C5B317C01DA800C614B6 /* CKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtility.m; sourceTree = "<group>"; };
 		40351C8317BBA90700CDADA5 /* CKListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListViewController.h; sourceTree = "<group>"; };
 		40351C8417BBA90700CDADA5 /* CKListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListViewController.m; sourceTree = "<group>"; };
 		40351C8517BBA90700CDADA5 /* CKListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKListViewController.xib; sourceTree = "<group>"; };
+		40351C8C17BBDF7400CDADA5 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
+		40351C8D17BBDF7400CDADA5 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
+		4035F1D117BFAF4800FF522B /* CKInboxDoNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxDoNowViewController.h; sourceTree = "<group>"; };
+		4035F1D217BFAF4800FF522B /* CKInboxDoNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxDoNowViewController.m; sourceTree = "<group>"; };
+		4035F1D317BFAF4800FF522B /* CKInboxDoNowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxDoNowViewController.xib; sourceTree = "<group>"; };
+		4035F1D817BFB1DD00FF522B /* CKEditNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEditNameCell.h; sourceTree = "<group>"; };
+		4035F1D917BFB1DD00FF522B /* CKEditNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKEditNameCell.m; sourceTree = "<group>"; };
+		4035F1E417BFBFD700FF522B /* CKEditPurposeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEditPurposeCell.h; sourceTree = "<group>"; };
+		4035F1E517BFBFD700FF522B /* CKEditPurposeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKEditPurposeCell.m; sourceTree = "<group>"; };
+		405458A217C3837E00DB65FB /* CKTellTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTellTemplate.m; sourceTree = "<group>"; };
+		405458A517C385E400DB65FB /* CKTellDoNow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTellDoNow.h; sourceTree = "<group>"; };
+		405458A617C385E400DB65FB /* CKTellDoNow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTellDoNow.m; sourceTree = "<group>"; };
 		405756DC17A3177D00735F69 /* Coordel iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordel iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		405756DF17A3177D00735F69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		405756E117A3177D00735F69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,7 +215,7 @@
 		405756E717A3177D00735F69 /* Coordel iPhone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coordel iPhone-Info.plist"; sourceTree = "<group>"; };
 		405756EB17A3177D00735F69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		405756ED17A3177D00735F69 /* Coordel iPhone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coordel iPhone-Prefix.pch"; sourceTree = "<group>"; };
-		405756EE17A3177D00735F69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		405756EE17A3177D00735F69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; };
 		405756EF17A3177D00735F69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4057570217A3177D00735F69 /* Coordel iPhoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coordel iPhoneTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4057570317A3177D00735F69 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -194,8 +237,6 @@
 		4057573717A3EBAF00735F69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4057573E17A3F26F00735F69 /* CKRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRevealViewController.h; sourceTree = "<group>"; };
 		4057573F17A3F26F00735F69 /* CKRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRevealViewController.m; sourceTree = "<group>"; };
-		405757DC17A47D3100735F69 /* CKBaseSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKBaseSegmentedViewController.h; sourceTree = "<group>"; };
-		405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKBaseSegmentedViewController.m; sourceTree = "<group>"; };
 		405757F017A480A400735F69 /* CKListsSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListsSegmentViewController.h; sourceTree = "<group>"; };
 		405757F117A480A400735F69 /* CKListsSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListsSegmentViewController.m; sourceTree = "<group>"; };
 		405757F417A480C300735F69 /* CKTasksSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTasksSegmentViewController.h; sourceTree = "<group>"; };
@@ -231,14 +272,14 @@
 		40612D3517BA662200736B1F /* CKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUser.m; sourceTree = "<group>"; };
 		40612D3817BA71F600736B1F /* CKListAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListAssignment.h; sourceTree = "<group>"; };
 		40612D3917BA71F600736B1F /* CKListAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListAssignment.m; sourceTree = "<group>"; };
+		40A6B52B17C61A7200EF052F /* CKListPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKListPickerViewController.h; sourceTree = "<group>"; };
+		40A6B52C17C61A7200EF052F /* CKListPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKListPickerViewController.m; sourceTree = "<group>"; };
 		40C5A30717AD237100EA140A /* CKInboxPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxPlayViewController.h; sourceTree = "<group>"; };
 		40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxPlayViewController.m; sourceTree = "<group>"; };
 		40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKInboxPlayViewController.xib; sourceTree = "<group>"; };
 		40C5A31317AD5A6800EA140A /* InboxData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InboxData.xcdatamodel; sourceTree = "<group>"; };
 		40C5A32617ADDB1600EA140A /* CKInboxMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKInboxMessageView.h; sourceTree = "<group>"; };
 		40C5A32717ADDB1600EA140A /* CKInboxMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKInboxMessageView.m; sourceTree = "<group>"; };
-		40C5A33C17AFC60300EA140A /* CKUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUtility.h; sourceTree = "<group>"; };
-		40C5A33D17AFC60400EA140A /* CKUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtility.m; sourceTree = "<group>"; };
 		40C5A34E17B11F1000EA140A /* RNGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNGridMenu.m; sourceTree = "<group>"; };
 		40C5A34F17B11F1000EA140A /* RNGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNGridMenu.h; sourceTree = "<group>"; };
 		40C5A35217B11F8100EA140A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -269,6 +310,21 @@
 		40C5A49717B9263300EA140A /* CKTaskOwnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskOwnerCell.h; sourceTree = "<group>"; };
 		40C5A49817B9263300EA140A /* CKTaskOwnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskOwnerCell.m; sourceTree = "<group>"; };
 		40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKTaskOwnerCell.xib; sourceTree = "<group>"; };
+		40FE0A8817C4D2FF00D0ABF1 /* CKTaskActionTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskActionTemplate.h; sourceTree = "<group>"; };
+		40FE0A8917C4D2FF00D0ABF1 /* CKTaskActionTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskActionTemplate.m; sourceTree = "<group>"; };
+		40FE0A8C17C4D90B00D0ABF1 /* CKTaskActionDoNow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskActionDoNow.h; sourceTree = "<group>"; };
+		40FE0A8D17C4D90B00D0ABF1 /* CKTaskActionDoNow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskActionDoNow.m; sourceTree = "<group>"; };
+		40FE0A9817C4DB4D00D0ABF1 /* CKTellArchiveEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTellArchiveEmail.h; sourceTree = "<group>"; };
+		40FE0A9917C4DB4D00D0ABF1 /* CKTellArchiveEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTellArchiveEmail.m; sourceTree = "<group>"; };
+		40FE0A9A17C4DB4D00D0ABF1 /* CKTellDeleteEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTellDeleteEmail.h; sourceTree = "<group>"; };
+		40FE0A9B17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTellDeleteEmail.m; sourceTree = "<group>"; };
+		40FE0AA017C4DB8000D0ABF1 /* CKTaskActionDefer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskActionDefer.h; sourceTree = "<group>"; };
+		40FE0AA117C4DB8000D0ABF1 /* CKTaskActionDefer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskActionDefer.m; sourceTree = "<group>"; };
+		40FE0AA417C4DB9100D0ABF1 /* CKTaskActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTaskActionDelegate.h; sourceTree = "<group>"; };
+		40FE0AA517C4DB9100D0ABF1 /* CKTaskActionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTaskActionDelegate.m; sourceTree = "<group>"; };
+		40FE0AA817C4F39F00D0ABF1 /* CKTellDeferTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTellDeferTask.h; sourceTree = "<group>"; };
+		40FE0AA917C4F39F00D0ABF1 /* CKTellDeferTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTellDeferTask.m; sourceTree = "<group>"; };
+		40FE0AAC17C5232500D0ABF1 /* CKTellTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTellTemplate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +368,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40351C8B17BBDF7400CDADA5 /* SZTextView */ = {
+			isa = PBXGroup;
+			children = (
+				40351C8C17BBDF7400CDADA5 /* SZTextView.h */,
+				40351C8D17BBDF7400CDADA5 /* SZTextView.m */,
+			);
+			path = SZTextView;
+			sourceTree = "<group>";
+		};
+		4054589C17C382C900DB65FB /* Tell Templates */ = {
+			isa = PBXGroup;
+			children = (
+				40FE0AAC17C5232500D0ABF1 /* CKTellTemplate.h */,
+				405458A217C3837E00DB65FB /* CKTellTemplate.m */,
+				405458A517C385E400DB65FB /* CKTellDoNow.h */,
+				405458A617C385E400DB65FB /* CKTellDoNow.m */,
+				40FE0A9817C4DB4D00D0ABF1 /* CKTellArchiveEmail.h */,
+				40FE0A9917C4DB4D00D0ABF1 /* CKTellArchiveEmail.m */,
+				40FE0A9A17C4DB4D00D0ABF1 /* CKTellDeleteEmail.h */,
+				40FE0A9B17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m */,
+				40FE0AA817C4F39F00D0ABF1 /* CKTellDeferTask.h */,
+				40FE0AA917C4F39F00D0ABF1 /* CKTellDeferTask.m */,
+			);
+			name = "Tell Templates";
+			sourceTree = "<group>";
+		};
 		405756D317A3177D00735F69 = {
 			isa = PBXGroup;
 			children = (
@@ -372,8 +454,8 @@
 				4057580517A50A1D00735F69 /* LocalizedConstants.m */,
 				4057580717A50A3900735F69 /* Constants.h */,
 				4057580817A50A3A00735F69 /* Constants.m */,
-				40C5A33C17AFC60300EA140A /* CKUtility.h */,
-				40C5A33D17AFC60400EA140A /* CKUtility.m */,
+				4018C5B217C01DA800C614B6 /* CKUtility.h */,
+				4018C5B317C01DA800C614B6 /* CKUtility.m */,
 			);
 			path = Coordel;
 			sourceTree = "<group>";
@@ -420,14 +502,13 @@
 		4057571B17A3184800735F69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				40A6B52617C5322800EF052F /* New Group */,
 				4057586817A9B83600735F69 /* Access */,
 				4057573917A3F0CE00735F69 /* Reveal */,
 				405757D417A47A0000735F69 /* Lists */,
 				405757D517A47A0C00735F69 /* Tasks */,
 				405757D617A47A1200735F69 /* Inbox */,
 				405757D717A47A2300735F69 /* Settings */,
-				405757DC17A47D3100735F69 /* CKBaseSegmentedViewController.h */,
-				405757DD17A47D3100735F69 /* CKBaseSegmentedViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +525,7 @@
 		4057571D17A3187100735F69 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				40351C8B17BBDF7400CDADA5 /* SZTextView */,
 				40C5A3A517B6513E00EA140A /* THContactPicker */,
 				40C5A34D17B11EED00EA140A /* RNGridMenu */,
 				4057571F17A3E91C00735F69 /* SWRevealViewController */,
@@ -477,6 +559,8 @@
 				40351C8317BBA90700CDADA5 /* CKListViewController.h */,
 				40351C8417BBA90700CDADA5 /* CKListViewController.m */,
 				40351C8517BBA90700CDADA5 /* CKListViewController.xib */,
+				40A6B52B17C61A7200EF052F /* CKListPickerViewController.h */,
+				40A6B52C17C61A7200EF052F /* CKListPickerViewController.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -505,6 +589,9 @@
 				40C5A30717AD237100EA140A /* CKInboxPlayViewController.h */,
 				40C5A30817AD237100EA140A /* CKInboxPlayViewController.m */,
 				40C5A30917AD237100EA140A /* CKInboxPlayViewController.xib */,
+				4035F1D117BFAF4800FF522B /* CKInboxDoNowViewController.h */,
+				4035F1D217BFAF4800FF522B /* CKInboxDoNowViewController.m */,
+				4035F1D317BFAF4800FF522B /* CKInboxDoNowViewController.xib */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -541,6 +628,8 @@
 		4057585A17A98C4C00735F69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40FE0A8317C4CEB100D0ABF1 /* Action Templates */,
+				4054589C17C382C900DB65FB /* Tell Templates */,
 				4057586317A9995500735F69 /* Inbox */,
 				40C5A31217AD5A6800EA140A /* InboxData.xcdatamodeld */,
 				40C5A38B17B279AD00EA140A /* CKTask.h */,
@@ -585,6 +674,13 @@
 				4057589A17AAB4A700735F69 /* CKSignupViewController.m */,
 			);
 			name = Access;
+			sourceTree = "<group>";
+		};
+		40A6B52617C5322800EF052F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		40C5A31B17AD602000EA140A /* Inbox */ = {
@@ -638,6 +734,10 @@
 		40C5A3C317B6C17200EA140A /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				4035F1D817BFB1DD00FF522B /* CKEditNameCell.h */,
+				4035F1D917BFB1DD00FF522B /* CKEditNameCell.m */,
+				4035F1E417BFBFD700FF522B /* CKEditPurposeCell.h */,
+				4035F1E517BFBFD700FF522B /* CKEditPurposeCell.m */,
 				40C5A3C417B6C1AC00EA140A /* TaskDetails */,
 			);
 			name = TableCells;
@@ -654,6 +754,21 @@
 				40C5A49B17B9264F00EA140A /* CKTaskOwnerCell.xib */,
 			);
 			name = TaskDetails;
+			sourceTree = "<group>";
+		};
+		40FE0A8317C4CEB100D0ABF1 /* Action Templates */ = {
+			isa = PBXGroup;
+			children = (
+				40FE0A8817C4D2FF00D0ABF1 /* CKTaskActionTemplate.h */,
+				40FE0A8917C4D2FF00D0ABF1 /* CKTaskActionTemplate.m */,
+				40FE0A8C17C4D90B00D0ABF1 /* CKTaskActionDoNow.h */,
+				40FE0A8D17C4D90B00D0ABF1 /* CKTaskActionDoNow.m */,
+				40FE0AA017C4DB8000D0ABF1 /* CKTaskActionDefer.h */,
+				40FE0AA117C4DB8000D0ABF1 /* CKTaskActionDefer.m */,
+				40FE0AA417C4DB9100D0ABF1 /* CKTaskActionDelegate.h */,
+				40FE0AA517C4DB9100D0ABF1 /* CKTaskActionDelegate.m */,
+			);
+			name = "Action Templates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -778,6 +893,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4057580317A5058A00735F69 /* InfoPlist.strings in Resources */,
+				4035F1D617BFAF4800FF522B /* CKInboxDoNowViewController.xib in Resources */,
 				4057581017A6DD9200735F69 /* CKInboxViewController.xib in Resources */,
 				4057587217A9BFC700735F69 /* CKWelcomeViewController.xib in Resources */,
 				40351C8817BBA90700CDADA5 /* CKListViewController.xib in Resources */,
@@ -797,6 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4035F1D717BFAF4800FF522B /* CKInboxDoNowViewController.xib in Resources */,
 				4057570E17A3177D00735F69 /* InfoPlist.strings in Resources */,
 				40C5A3C717B6C1CF00EA140A /* CKTaskNameCell.xib in Resources */,
 				40351C8917BBA90700CDADA5 /* CKListViewController.xib in Resources */,
@@ -828,10 +945,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				405756EC17A3177D00735F69 /* main.m in Sources */,
+				40FE0AA217C4DB8000D0ABF1 /* CKTaskActionDefer.m in Sources */,
 				405756F017A3177D00735F69 /* AppDelegate.m in Sources */,
 				4057572217A3E91C00735F69 /* SWRevealViewController.m in Sources */,
+				4035F1D417BFAF4800FF522B /* CKInboxDoNowViewController.m in Sources */,
+				40A6B52D17C61A7200EF052F /* CKListPickerViewController.m in Sources */,
 				4057574017A3F26F00735F69 /* CKRevealViewController.m in Sources */,
-				405757DE17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */,
 				405757F217A480A400735F69 /* CKListsSegmentViewController.m in Sources */,
 				405757F617A480C300735F69 /* CKTasksSegmentViewController.m in Sources */,
 				405757FA17A480DC00735F69 /* CKInboxViewController.m in Sources */,
@@ -839,21 +958,32 @@
 				4057580617A50A1D00735F69 /* LocalizedConstants.m in Sources */,
 				40612D3217BA474A00736B1F /* CKList.m in Sources */,
 				4057580917A50A3A00735F69 /* Constants.m in Sources */,
+				40FE0A8A17C4D2FF00D0ABF1 /* CKTaskActionTemplate.m in Sources */,
 				4057586117A98E1500735F69 /* CKEmailAccount.m in Sources */,
 				4057587117A9BFC700735F69 /* CKWelcomeViewController.m in Sources */,
+				4018C5B417C01DA800C614B6 /* CKUtility.m in Sources */,
 				4057588417A9DD8D00735F69 /* CKWelcomeChildViewController.m in Sources */,
 				4057589117AA723B00735F69 /* CKLoginViewController.m in Sources */,
+				40351C8E17BBDF7400CDADA5 /* SZTextView.m in Sources */,
 				4057589417AA735E00735F69 /* CKAccessViewController.m in Sources */,
+				4035F1E617BFBFD700FF522B /* CKEditPurposeCell.m in Sources */,
+				4035F1DA17BFB1DD00FF522B /* CKEditNameCell.m in Sources */,
+				405458A717C385E400DB65FB /* CKTellDoNow.m in Sources */,
 				4057589B17AAB4A900735F69 /* CKSignupViewController.m in Sources */,
 				4017239817ABE20800F97442 /* CKInbox.m in Sources */,
 				40C5A30A17AD237100EA140A /* CKInboxPlayViewController.m in Sources */,
+				40FE0A9E17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m in Sources */,
 				40C5A31417AD5A6800EA140A /* InboxData.xcdatamodeld in Sources */,
+				40FE0AA617C4DB9100D0ABF1 /* CKTaskActionDelegate.m in Sources */,
 				40C5A32817ADDB1600EA140A /* CKInboxMessageView.m in Sources */,
 				40612D3617BA662200736B1F /* CKUser.m in Sources */,
-				40C5A33E17AFC60400EA140A /* CKUtility.m in Sources */,
+				40FE0A9C17C4DB4D00D0ABF1 /* CKTellArchiveEmail.m in Sources */,
 				40C5A35017B11F1000EA140A /* RNGridMenu.m in Sources */,
+				40FE0A8E17C4D90B00D0ABF1 /* CKTaskActionDoNow.m in Sources */,
 				40612D3A17BA71F600736B1F /* CKListAssignment.m in Sources */,
+				40FE0AAA17C4F39F00D0ABF1 /* CKTellDeferTask.m in Sources */,
 				40C5A38917B2667400EA140A /* CKTaskViewController.m in Sources */,
+				405458A317C3837E00DB65FB /* CKTellTemplate.m in Sources */,
 				40C5A38D17B279AD00EA140A /* CKTask.m in Sources */,
 				40C5A39F17B57C3100EA140A /* CKTaskInformViewController.m in Sources */,
 				40C5A3AC17B6516A00EA140A /* THBubbleColor.m in Sources */,
@@ -870,27 +1000,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4035F1E717BFBFD700FF522B /* CKEditPurposeCell.m in Sources */,
 				40612D3B17BA71F600736B1F /* CKListAssignment.m in Sources */,
 				4057571117A3177D00735F69 /* CoordelTests.m in Sources */,
 				4057572317A3E91C00735F69 /* SWRevealViewController.m in Sources */,
 				4057574117A3F26F00735F69 /* CKRevealViewController.m in Sources */,
-				405757DF17A47D3100735F69 /* CKBaseSegmentedViewController.m in Sources */,
+				40A6B52E17C61A7200EF052F /* CKListPickerViewController.m in Sources */,
 				405757F317A480A400735F69 /* CKListsSegmentViewController.m in Sources */,
 				405757F717A480C300735F69 /* CKTasksSegmentViewController.m in Sources */,
 				405757FB17A480DC00735F69 /* CKInboxViewController.m in Sources */,
+				40FE0A8B17C4D2FF00D0ABF1 /* CKTaskActionTemplate.m in Sources */,
+				405458A417C3837E00DB65FB /* CKTellTemplate.m in Sources */,
 				40612D3317BA474A00736B1F /* CKList.m in Sources */,
 				405757FF17A480F700735F69 /* CKSettingsViewController.m in Sources */,
 				40612D3717BA662200736B1F /* CKUser.m in Sources */,
 				4057586217A98E1500735F69 /* CKEmailAccount.m in Sources */,
+				4035F1DB17BFB1DD00FF522B /* CKEditNameCell.m in Sources */,
+				405458A817C385E400DB65FB /* CKTellDoNow.m in Sources */,
 				4017239917ABE20800F97442 /* CKInbox.m in Sources */,
 				40C5A35117B11F1000EA140A /* RNGridMenu.m in Sources */,
 				40C5A3AD17B6516A00EA140A /* THBubbleColor.m in Sources */,
+				40FE0AA317C4DB8000D0ABF1 /* CKTaskActionDefer.m in Sources */,
 				40C5A3AF17B6516A00EA140A /* THContactBubble.m in Sources */,
+				4035F1D517BFAF4800FF522B /* CKInboxDoNowViewController.m in Sources */,
+				40FE0AAB17C4F39F00D0ABF1 /* CKTellDeferTask.m in Sources */,
+				40351C8F17BBDF7400CDADA5 /* SZTextView.m in Sources */,
 				40C5A3B117B6516A00EA140A /* THContactPickerView.m in Sources */,
+				40FE0A9F17C4DB4D00D0ABF1 /* CKTellDeleteEmail.m in Sources */,
+				40FE0A9D17C4DB4D00D0ABF1 /* CKTellArchiveEmail.m in Sources */,
 				40C5A3C117B65D7500EA140A /* CKTaskAction.m in Sources */,
 				40C5A41D17B7BB6700EA140A /* CKTaskNameCell.m in Sources */,
 				40351C8717BBA90700CDADA5 /* CKListViewController.m in Sources */,
+				40FE0AA717C4DB9100D0ABF1 /* CKTaskActionDelegate.m in Sources */,
+				4018C5B517C01DA800C614B6 /* CKUtility.m in Sources */,
 				40C5A49A17B9263400EA140A /* CKTaskOwnerCell.m in Sources */,
+				40FE0A8F17C4D90B00D0ABF1 /* CKTaskActionDoNow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

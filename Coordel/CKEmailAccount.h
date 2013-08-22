@@ -37,10 +37,11 @@
 - (NSDate *)fetchEarliestMessageReceivedDate;
 
 //messages
-/*
-- (void)sendMessage;
-- (void)archiveMessage:(MCOIMAPMessage *)message toFolderName:(NSString *)folder;
-- (void)loadMessagesFromHeaders:(NSArray *)headers;
- */
+
+- (void)sendMessage:(MCOMessageBuilder *)builder;
+- (void)archiveMessage:(NSInteger)uid toFolderName:(NSString *)folder;
+- (void)deleteMessage:(NSInteger)uid;
+//- (void)loadMessagesFromHeaders:(NSArray *)headers;
+
 
 @end

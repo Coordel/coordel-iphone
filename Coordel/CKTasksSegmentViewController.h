@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
-#import "CKBaseSegmentedViewController.h"
-
 @interface CKTasksSegmentViewController : PFQueryTableViewController
 
 @property int segmentIndex;

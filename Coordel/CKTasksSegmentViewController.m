@@ -91,9 +91,14 @@
 
 // Override to customize what kind of query to perform on the class.
 - (PFQuery *)queryForTable {
-    NSLog(@"current user in task %@ %@", [CKUser currentUser], [CKUser.currentUser objectId]);
+    //NSLog(@"current user in task %@ %@", [CKUser currentUser], [CKUser.currentUser objectId]);
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query whereKey:@"owner" equalTo:[CKUser.currentUser objectId]];
+    
+    CKUser *user = [CKUser currentUser];
+    if (user){
+      [query whereKey:@"owner" equalTo:[user objectId]];
+    }
+
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
     

@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, CKListType) {
 };
 
 typedef NS_ENUM(NSInteger, CKListRole) {
-    CKListRoleResponsible,
+    CKListRoleOrganizer,
     CKListRoleParticipant,
     CKListRoleFollower
 };
@@ -90,6 +90,9 @@ typedef NS_ENUM(NSInteger, CKTaskProperty) {
 #define kCKColorTasks [UIColor colorWithRed:63/255.0f green:169/255.0f blue:245/255.0f alpha:1]
 #define kCKColorInbox [UIColor colorWithRed:255/255.0f green:29/255.0f blue:37/255.0f alpha:1]
 #define kCKColorLightGray [UIColor colorWithRed:230/255.0f green:230/255.0f blue:230/255.0f alpha:1]
+#define kCKColorPlaceholderGray [UIColor colorWithRed:199/255.0f green:198/255.0f blue:205/255.0f alpha:1]
+
+
 
 
 #pragma mark - User Defaults Keys
@@ -97,6 +100,10 @@ typedef NS_ENUM(NSInteger, CKTaskProperty) {
 extern NSString *const kCKUserDefaultsAfterFirstLaunch;
 extern NSString *const kCKUserDefaultsInboxSliderDate;
 extern NSString *const kCKUserDefaultsInboxPlayBatchSize;
+extern NSString *const kCKUserDefaultsListDefaultDeadlineDayInterval;
+extern NSString *const kCKUserDefaultsTaskDefaultDeadlineDayInterval;
+
+
 
 #pragma mark - Core Data Keys
 extern NSString *const kCKInboxDataMessagesEntity;

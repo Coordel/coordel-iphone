@@ -6,35 +6,30 @@
 //  Copyright (c) 2013 Jeffry Gorder. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 #import <MailCore/MailCore.h>
 #import "CKTask.h"
+#import "CKTaskActionTemplate.h"
 
 
 
-@interface CKTaskAction : NSObject <UITableViewDataSource>
+@interface CKTaskAction : NSObject
 
 
 @property NSInteger actionType;
 @property CKTask *task;
 @property MCOMessageParser *email;
+@property NSInteger emailUID;
+@property CKTaskActionTemplate *actionTemplate;
 
-/*
- properties for the "Do" part of the action. This will usually require
- the user to edit a task. tasks will be edited in a grouped table so the action implements the UITableViewDataSource protocol
- */
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) NSMutableArray *sectionKeys;
-@property (nonatomic, retain) NSMutableDictionary *sectionContents;
-@property (nonatomic, retain) NSMutableDictionary *sectionFooters;
-@property (readonly) NSString *navigationTitle;
+
 
 
 //if there is an existing task for this action, init with that task
 - (id)initWithTask: (CKTask *)task forAction:(NSInteger)actionType;
 
 //if this is an email action, init with the email
-- (id)initWithEmail: (MCOMessageParser *)email forAction:(NSInteger)actionType;
+- (id)initWithEmail: (MCOMessageParser *)email forAction:(NSInteger)actionType withUID:(NSInteger)uid;
 
 
 

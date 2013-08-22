@@ -10,6 +10,11 @@
 
 @interface CKUser : PFUser<PFSubclassing>
 
+@property (nonatomic) NSString *defaultList;
+@property (nonatomic) NSString *fullName;
+
 + (CKUser *)currentUser;
+
+
 
 @end

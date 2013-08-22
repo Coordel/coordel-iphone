@@ -43,6 +43,10 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self setInboxCountLabel];
+}
+
 
 - (void)viewDidLoad
 {

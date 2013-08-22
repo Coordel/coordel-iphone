@@ -8,17 +8,10 @@
 
 #import "CKTaskAction.h"
 
-@interface CKTaskViewController : UITableViewController
+@interface CKTaskViewController : UITableViewController 
 
-/*
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-
- @property (nonatomic, retain) NSMutableArray *sectionKeys;
-@property (nonatomic, retain) NSMutableDictionary *sectionContents;
-*/
 
 @property CKTaskAction *action;
-
 @property NSString *taskName;
 @property NSString *taskPurpose;
 

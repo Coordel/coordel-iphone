@@ -32,9 +32,10 @@
          */
         
         _credentials = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                     @"jeffgorder@gmail.com", @"username", @"Secure1129", @"password", @"imap.gmail.com",  @"hostName", @"993", @"port", nil];
+                                    @"Jeff Gorder", @"fullName", @"jeffgorder@gmail.com", @"username", @"Secure1129", @"password", @"imap.gmail.com",  @"hostName", @"993", @"port", nil];
         
         _account = [[CKEmailAccount alloc]initWithCredentials:_credentials];
+        
         
     }
     return self;
@@ -143,5 +144,20 @@
 
     [_account clearLocalHeaders];
 }
+
+#pragma mark messages
+
+- (void)sendMessage:(MCOMessageBuilder *)builder{
+#warning need to implement the ability to choose the correct account
+    [_account sendMessage:builder];
+};
+
+- (void)archiveMessage:(NSInteger)uid toFolderName:(NSString *)folder{
+    [_account archiveMessage:uid toFolderName:folder];
+};
+
+- (void)deleteMessage:(NSInteger)uid{
+    [_account deleteMessage:uid];
+};
 
 @end

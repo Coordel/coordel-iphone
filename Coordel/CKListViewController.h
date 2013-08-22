@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CKList.h"
 
 @interface CKListViewController : UITableViewController
+
+@property CKList *list;
 
 @end

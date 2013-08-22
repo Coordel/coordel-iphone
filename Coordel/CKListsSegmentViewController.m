@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CKListViewController.h"
+
+#import "RNGridMenu.h"
 
 #import "CKListsSegmentViewController.h"
 #import "SWRevealViewController.h"
@@ -66,6 +69,71 @@
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     self.navigationController.navigationBar.tintColor = kCKColorLists;
     self.segmentIndex = 0;
+    
+    
+    //toolbar
+    NSArray* toolbarItems = [NSArray arrayWithObjects:
+                             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                             [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"action"] style:UIBarButtonItemStylePlain target:self action:@selector (showGrid)],
+                             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                             nil];
+    self.toolbarItems = toolbarItems;
+
+    self.navigationController.toolbarHidden = NO;
+    self.navigationController.toolbar.tintColor = kCKColorLists;
+
+}
+
+- (void)showGrid{
+    NSInteger numberOfOptions = 3;
+    NSArray *items = @[
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"add-menu"] title:@"Add"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"defer-menu"] title:@"Update"],
+                       [[RNGridMenuItem alloc] initWithImage:[UIImage imageNamed:@"delete-menu"] title:@"Delete"]
+                       ];
+    
+    RNGridMenu *av = [[RNGridMenu alloc] initWithItems:[items subarrayWithRange:NSMakeRange(0, numberOfOptions)]];
+    av.delegate = self;
+    av.highlightColor = kCKColorLists;
+    //    av.bounces = NO;
+    [av showInViewController:self center:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)];
+}
+
+- (void)gridMenu:(RNGridMenu *)gridMenu willDismissWithSelectedItem:(RNGridMenuItem *)item atIndex:(NSInteger)itemIndex {
+    NSLog(@"Dismissed with item %d", itemIndex);
+    [self doAction:itemIndex];
+}
+
+- (void)doAction: (NSInteger)actionIndex {
+    
+    CKListViewController *listView = [[CKListViewController alloc] init];
+    
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @"Lists"
+                                   style: UIBarButtonItemStyleBordered
+                                   target: nil action: nil];
+    
+    [self.navigationItem setBackBarButtonItem: backButton];
+    
+    UIBarButtonItem *nextButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @"Tell"
+                                   style: UIBarButtonItemStyleBordered
+                                   target: nil action: nil];
+    
+    [listView.navigationItem setRightBarButtonItem:nextButton];
+    
+    [listView.navigationItem setTitle: @"Do Action"];
+    
+    
+
+    
+    [self.navigationController pushViewController:listView animated:YES];
+}
+
+
+- (void) addList {
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,6 +155,9 @@
 	//defaultTintColor = [segmentedControl.tintColor retain];	// keep track of this for later
     
 	self.navigationItem.titleView = segmentedControl;
+    /*
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addList)];
+     */
 }
 
 
@@ -96,7 +167,7 @@
 - (PFQuery *)queryForTable {
     NSLog(@"current user in task %@ %@", [CKUser currentUser], [CKUser.currentUser objectId]);
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query whereKey:@"responsible" equalTo:[CKUser.currentUser objectId]];
+    [query whereKey:@"organizer" equalTo:[CKUser.currentUser objectId]];
     
     
     

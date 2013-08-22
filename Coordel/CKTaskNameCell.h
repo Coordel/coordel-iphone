@@ -10,6 +10,7 @@
 
 @interface CKTaskNameCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *cellLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+
 
 @end

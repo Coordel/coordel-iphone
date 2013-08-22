@@ -16,6 +16,7 @@
 
 @interface CKEmailAccount() <MCOHTMLRendererIMAPDelegate>
 
+@property AppDelegate *app;
 @property NSString *folder;
 //@property MCOIMAPSession *session; //need to open the session on initialization
 @property MCOIMAPFolderInfo *inboxFolderInfo;
@@ -32,25 +33,48 @@
 -(id)initWithCredentials: (NSDictionary *)credentials{
     self = [super init];
     if (self){
-        self.folder = @"INBOX";
-        self.credentials = credentials;
+        _app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        _folder = @"INBOX";
+        _credentials = credentials;
         
         
         NSLog(@"Loading INBOX with credentials %@", credentials);
 
         //overriding init so that the email session can be started and headers loaded with the credentials
     
-        self.session = [[MCOIMAPSession alloc]init];
+        _session = [[MCOIMAPSession alloc]init];
         
         MCOIMAPFolderInfo *latestInfo = [[MCOIMAPFolderInfo alloc]init];//get from NSUserDefaults
         
-        [self.session setHostname:[credentials valueForKey:@"hostName"]];
-        [self.session setPort: [[credentials valueForKey:@"port"]intValue]];
-        [self.session setUsername:[credentials valueForKey:@"username"]];
-        [self.session setPassword:[credentials valueForKey:@"password"]];
-        [self.session setConnectionType:MCOConnectionTypeTLS];
+        [_session setHostname:[credentials valueForKey:@"hostName"]];
+        [_session setPort: [[credentials valueForKey:@"port"]intValue]];
+        [_session setUsername:[credentials valueForKey:@"username"]];
+        [_session setPassword:[credentials valueForKey:@"password"]];
+        [_session setConnectionType:MCOConnectionTypeTLS];
         
-        self.username = [credentials valueForKey:@"username"];
+        [_session setDelimiter:(char)"/"];
+        
+        _username = [credentials valueForKey:@"username"];
+        
+        //create the default archive folder
+        MCOIMAPOperation * op = [_session createFolderOperation:@"[Coordel]"];
+        [op start:^(NSError * error) {
+            if (!error){
+                NSLog(@"Created default [Coordel] folder");
+                
+                MCOIMAPOperation * op2 = [_session createFolderOperation:@"[Coordel]/Archive"];
+                [op2 start:^(NSError * error) {
+                    if (!error){
+                        NSLog(@"Created default [Coordel]/Archive folder");
+                    } else {
+                        NSLog(@"Error creating default [Coordel]/Archive folder! %@", error);
+                    }
+                }];
+
+            } else {
+                NSLog(@"Error creating default [Coordel] folder! %@", error);
+            }
+        }];
 
         
         //open session for the account and store in the accountSession. load the headers 
@@ -105,18 +129,129 @@
 }
  */
 
-/*
+
 #pragma email actions
-- (void) sendEmailMessage
+- (void)sendMessage:(MCOMessageBuilder *)builder
 {
+    
+    
+    MCOSMTPSession *smtpSession = [[MCOSMTPSession alloc] init];
+    
+    smtpSession.hostname = @"smtp.gmail.com";
+    smtpSession.port = 465;
+    smtpSession.username = [_credentials valueForKey:@"username"];
+    smtpSession.password = [_credentials valueForKey:@"password"];
+    smtpSession.connectionType = MCOConnectionTypeTLS;
+
+    //useragent set to coordel
+    [[builder header] setUserAgent:@"Coordel iPhone/1.0"];
+    
+    //get the data
+    NSData * rfc822Data = [builder data];
+    
+    MCOSMTPSendOperation *sendOperation = [smtpSession sendOperationWithData:rfc822Data];
+    [sendOperation start:^(NSError *error) {
+        if(error) {
+            NSLog(@"Error sending email:%@",error);
+        } else {
+            NSLog(@"Successfully sent email!");
+        }
+    }];
     
 }
 
-- (void) archiveMessage: (MCOIMAPMessage *)msg toFolderName:(NSString *)folder
+- (void)seeMessage:(NSInteger)uid {
+    MCOIMAPOperation * op = [_session storeFlagsOperationWithFolder:@"INBOX"
+                                                               uids:[MCOIndexSet indexSetWithIndex:uid]
+                                                               kind:MCOIMAPStoreFlagsRequestKindAdd
+                                                              flags:MCOMessageFlagSeen];
+    [op start:^(NSError * error) {
+        
+        if(!error) {
+            NSLog(@"Updated message seen flag!");
+        } else {
+            NSLog(@"Error updating message seen flag:%@", error);
+        }
+        
+    }];
+}
+
+- (void)archiveMessage:(NSInteger)uid toFolderName:(NSString *)folder
 {
     //after every inbox action, the original message should be moved out of the inbox into an archive folder
+    
+    MCOIMAPCopyMessagesOperation * op = [_session copyMessagesOperationWithFolder:@"INBOX"
+                                                                            uids:[MCOIndexSet indexSetWithIndex:uid]
+                                                                      destFolder:folder];
+    [op start:^(NSError * error, MCOIndexSet * destUids) {
+        
+        if(!error) {
+            NSLog(@"copied to folder with UID %@", destUids);
+        } else {
+            NSLog(@"Error copying message with UID:%@", error);
+        }
+        
+        MCOIMAPOperation *flagOp = [_session storeFlagsOperationWithFolder:@"INBOX"
+                                                                  uids:[MCOIndexSet indexSetWithIndex:uid]
+                                                                  kind:MCOIMAPStoreFlagsRequestKindSet
+                                                                 flags:MCOMessageFlagDeleted];
+        
+        [flagOp start:^(NSError * error) {
+            if(!error) {
+                NSLog(@"Updated delete flags on archived message!");
+            } else {
+                NSLog(@"Error updating delete flags on archived message:%@", error);
+            }
+            
+            
+            MCOIMAPOperation *deleteOp = [_session expungeOperation:@"INBOX"];
+            
+            [deleteOp start:^(NSError *error) {
+                if(error) {
+                    NSLog(@"Error expunging folder for archived message:%@", error);
+                } else {
+                    NSLog(@"Successfully expunged folder for archived message");
+                    [self removeHeader:uid];
+                }
+            }];
+        }];
+        
+    }];
 }
-*/
+
+- (void)deleteMessage:(NSInteger)uid
+{
+    //permanently deletes a message for a given uid
+    
+    
+    MCOIMAPOperation *op = [_session storeFlagsOperationWithFolder:@"INBOX"
+                                                              uids:[MCOIndexSet indexSetWithIndex:uid]
+                                                              kind:MCOIMAPStoreFlagsRequestKindSet
+                                                             flags:MCOMessageFlagDeleted];
+    
+    [op start:^(NSError * error) {
+        if(!error) {
+            NSLog(@"Updated flags!");
+        } else {
+            NSLog(@"Error updating flags:%@", error);
+        }
+        
+      
+        MCOIMAPOperation *deleteOp = [_session expungeOperation:@"INBOX"];
+        [deleteOp start:^(NSError *error) {
+            if(error) {
+                NSLog(@"Error expunging folder:%@", error);
+            } else {
+                NSLog(@"Successfully expunged folder");
+                
+                [self removeHeader:uid];
+                
+            }
+        }];
+    }];
+    
+    
+}
 
 #pragma email headers management
 - (void)loadHeaders
@@ -232,6 +367,37 @@
     NSError *error;
     [context save:&error];
 
+}
+
+- (void)removeHeader:(NSInteger)uid{
+    
+    //checks to see if the headers for this account are available locally
+    //if they aren't available locally, loads them and saves them locally
+    NSManagedObjectContext *moc = [(AppDelegate*)[[UIApplication sharedApplication] delegate]managedObjectContext];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:kCKInboxDataMessagesEntity inManagedObjectContext:moc];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    // Set example predicate and sort orderings...
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(uid == %d)", uid];
+    
+    [request setPredicate:predicate];
+    
+    
+    NSError *error;
+    NSArray *filteredArray = [moc executeFetchRequest:request error:&error];
+    if (filteredArray == nil)
+    {
+        // Deal with error...
+        NSLog(@"no records returned");
+    } else {
+        [moc deleteObject:[filteredArray objectAtIndex:0]];
+        [moc save:&error];
+    }
+    
 }
 
 - (void)saveHeadersLocally: (NSArray *)messages

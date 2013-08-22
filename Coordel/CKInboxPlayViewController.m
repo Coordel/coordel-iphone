@@ -15,22 +15,22 @@
 #import <MailCore/MailCore.h>
 #import "RNGridMenu.h"
 #import "CKTaskViewController.h"
+#import "CKInboxDoNowViewController.h"
 #import "CKTaskAction.h"
+#import "CKTaskInformViewController.h"
 
 
 
-@interface CKInboxPlayViewController () //<MCOMessageViewDelegate>
+@interface CKInboxPlayViewController () <UIActionSheetDelegate> //<MCOMessageViewDelegate>
 
 @property CKInboxMessageView *messageView;
 @property CKInbox *inbox;
-
-
 @property AppDelegate *app;
-@property int playBatchSize;
-
+@property NSInteger playBatchSize;
 @property MCOMessageParser *msg;
-
+@property NSInteger msgUID;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end
 
@@ -45,19 +45,27 @@
     return self;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (_app.actionCompleted){
+        [self showNextMessage];
+        _app.actionCompleted = NO;
+    }
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     _inbox = [_app inbox];
-  
 
     //[self.navigationItem setHidesBackButton:YES];
     
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelPlay:)];
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
     
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"deadline-calendar.png"] landscapeImagePhone:[UIImage imageNamed:@"deadline-calendar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showCalendar:)];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"action"] landscapeImagePhone:[UIImage imageNamed:@"action"] style:UIBarButtonItemStyleBordered target:self action:@selector(showActions:)];
     [self.navigationItem setRightBarButtonItems:@[rightBarButton] animated:YES];
     
     [self setNavigationBarTitle];
@@ -82,7 +90,7 @@
 }
 
 - (void) setNavigationBarTitle{
-    NSString *barTitle =[NSString stringWithFormat:@"E-mail %d of %d", _app.inboxPlayCount, _app.inboxPlayBatchSize];
+    NSString *barTitle =[NSString stringWithFormat:@"E-mail %d of %d", _app.inboxPlayCount, _app.inboxPlayBatch.count];
     
     [self.navigationItem setTitle:barTitle];
 }
@@ -90,15 +98,15 @@
 
 - (void) showNextMessage
 {
-    NSLog(@"inbox play count %d, inbox batch size %d", _app.inboxPlayCount, _app.inboxPlayBatchSize);
-    if (_app.inboxPlayCount < _app.inboxPlayBatchSize) {
+    NSLog(@"inbox play count %d, inbox batch size %d", _app.inboxPlayCount, _app.inboxPlayBatch.count);
+    if (_app.inboxPlayCount < _app.inboxPlayBatch.count) {
         
         NSDictionary *next = [_app inboxPlayGetNextMessage];
         
-        int uid = [[next valueForKey:kCKInboxDataMessagesEntityUIDKey] intValue];
+        _msgUID = [[next valueForKey:kCKInboxDataMessagesEntityUIDKey] intValue];
         
         NSLog(@"next message %@", next);
-        MCOIMAPFetchContentOperation * op = [[_inbox IMAPSessionForAccount:@""] fetchMessageByUIDOperationWithFolder:@"INBOX" uid:uid];
+        MCOIMAPFetchContentOperation * op = [[_inbox IMAPSessionForAccount:@""] fetchMessageByUIDOperationWithFolder:@"INBOX" uid:_msgUID];
         
         [op start:^(NSError * error, NSData * data) {
             if ([error code] != MCOErrorNone) {
@@ -118,6 +126,7 @@
         [self setNavigationBarTitle];
     } else {
         NSLog(@"we're done");
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
 }
@@ -171,11 +180,9 @@
         case 0:
             type = CKTaskActionTypeDoNow;
             break;
-            
         case 1:
             type = CKTaskActionTypeDefer;
             break;
-            
         case 2:
             type = CKTaskActionTypeDelegate;
             break;
@@ -196,12 +203,11 @@
 
 - (void)doAction: (NSInteger)actionIndex {
     
-    NSLog(@"sender %@", _msg.header);
+    NSLog(@"sender %@ ACTION %ld", _msg.header, (long)actionIndex);
     
         
-    CKTaskAction *act = [[CKTaskAction alloc]initWithEmail:_msg forAction:[self actionTypeFromIndex:actionIndex]];
-    CKTaskViewController *taskView = [[CKTaskViewController alloc] initWithAction:act];
-    
+    CKTaskAction *act;
+   
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle: @"E-mail"
@@ -209,10 +215,124 @@
                                    target: nil action: nil];
     
     [self.navigationItem setBackBarButtonItem: backButton];
+    
+    switch (actionIndex) {
+        case 0:
+             act = [[CKTaskAction alloc]initWithEmail:_msg forAction:[self actionTypeFromIndex:actionIndex] withUID:_msgUID];
+            [self doNow:act];
+            break;
+        case 3:
+            [self attachMessage:act];
+            break;
 
-    [self.navigationController pushViewController:taskView animated:YES];
+        case 4:
+            [self archiveMessage:act];
+            break;
+            
+        case 5:
+            [self deleteMessage:act];
+            break;
+            
+        default:
+            act = [[CKTaskAction alloc]initWithEmail:_msg forAction:[self actionTypeFromIndex:actionIndex] withUID:_msgUID];
+            [self addTask:act];
+            break;
+
+            
+    }
+    
 }
 
+- (void)doNow:(CKTaskAction *)act {
+    CKInboxDoNowViewController *doNowView = [[CKInboxDoNowViewController alloc] initWithAction:act];
+    [self.navigationController pushViewController:doNowView animated:YES];
+}
+
+- (void)addTask:(CKTaskAction *)act {
+    CKTaskViewController *deferTask = [[CKTaskViewController alloc] initWithAction:act];
+    [self.navigationController pushViewController:deferTask animated:YES];
+}
+
+- (void)attachMessage:(CKTaskAction *)act{
+    
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: nil
+                                                             delegate: self
+                                                    cancelButtonTitle: nil
+                                               destructiveButtonTitle: nil
+                                                    otherButtonTitles: nil];
+    
+ 
+    [actionSheet addButtonWithTitle: @"Attach to List"];
+    [actionSheet addButtonWithTitle: @"Attach to Task"];
+
+    
+    [actionSheet addButtonWithTitle: @"Cancel"];
+    [actionSheet setCancelButtonIndex: 2];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+
+- (void)archiveMessage:(CKTaskAction *)act {
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:nil
+                                                            delegate:self cancelButtonTitle:@"Cancel"
+                                              destructiveButtonTitle:@"Archive Message"
+                                                   otherButtonTitles:@"Archive and Tell", nil];
+    
+    popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
+    [popupQuery showInView:self.view];
+}
+
+- (void)deleteMessage:(CKTaskAction *)act {
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:nil
+                                                            delegate:self cancelButtonTitle:@"Cancel"
+                                              destructiveButtonTitle:@"Delete Message"
+                                                   otherButtonTitles:@"Delete and Tell", nil];
+    
+    popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
+    [popupQuery showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    //Get the name of the current pressed button
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if  ([buttonTitle isEqualToString:@"Delete Message"]) {
+        NSLog(@"Delete pressed --> Delete Message");
+        [_app.inbox deleteMessage:_msgUID];
+        [self showNextMessage];
+    }
+    if  ([buttonTitle isEqualToString:@"Archive Message"]) {
+        NSLog(@"Archive pressed --> Archive Message");
+        [_app.inbox archiveMessage:_msgUID toFolderName:@"[Coordel]/Archive"];
+        [self showNextMessage];
+    }
+    if ([buttonTitle isEqualToString:@"Delete and Tell"]) {
+        NSLog(@"Delete and Tell pressed");
+        
+        CKTaskAction *act = [[CKTaskAction alloc]initWithEmail:_msg forAction:CKTaskActionTypeDelete withUID:_msgUID];
+        
+        CKTaskInformViewController *taskInform = [[CKTaskInformViewController alloc] initWithAction:act];
+        [self.navigationController pushViewController:taskInform animated:YES];
+        
+    }
+    if ([buttonTitle isEqualToString:@"Archive and Tell"]) {
+        NSLog(@"Archive and Tell pressed");
+        CKTaskAction *act = [[CKTaskAction alloc]initWithEmail:_msg forAction:CKTaskActionTypeArchive withUID:_msgUID];
+        
+        CKTaskInformViewController *taskInform = [[CKTaskInformViewController alloc] initWithAction:act];
+        [self.navigationController pushViewController:taskInform animated:YES];
+    }
+    if  ([buttonTitle isEqualToString:@"Attach to List"]) {
+        NSLog(@"Attach to List pressed --> Show List Picker");
+    }
+    if  ([buttonTitle isEqualToString:@"Attach to Task"]) {
+        NSLog(@"Attach to Task pressed --> Show Task Picker");
+    }
+    if ([buttonTitle isEqualToString:@"Cancel"]) {
+        NSLog(@"Cancel pressed --> Cancel ActionSheet");
+    }
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -234,6 +354,7 @@
 }
 
 - (IBAction)skipMessage:(id)sender {
+    [_app.failSound play];
     [self showNextMessage];
 }
 @end

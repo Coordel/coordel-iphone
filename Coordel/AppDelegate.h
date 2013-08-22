@@ -7,7 +7,7 @@
 //
 
 #import "CKInbox.h"
-
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface AppDelegate : UIResponder < UIApplicationDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
@@ -22,8 +22,11 @@
 @property (readonly, strong, nonatomic) CKInbox *inbox;
 @property int inboxPlayBatchSize;
 @property int inboxPlayCount;
+@property BOOL actionCompleted;
+@property NSArray *inboxPlayBatch;
 
-
+@property (nonatomic, strong) AVAudioPlayer *failSound;
+@property (nonatomic, strong) AVAudioPlayer *successSound;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
